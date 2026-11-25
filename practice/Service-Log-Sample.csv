@@ -1,0 +1,6 @@
+TicketID,Category,Location,ReportedDate,ResolvedDate,Notes
+T-501,Gate Arm,Garage 2 North,2026-11-18,2026-11-18,"Sensor cleaned, arm tested 5 times"
+T-502,Pay Station,Lot B West,2026-11-19,,"Card reader screen frozen, awaiting parts"
+T-503,Shuttle Sign,Stop 4 Library,2026-11-20,2026-11-21,"Replaced solar battery pack"
+T-504,Gate Arm,Garage 2 North,2026-11-22,,"Repeat jam on entry lane 2"
+T-505,Lighting,Lot C East,2026-11-22,2026-11-23,"Replaced 2 LED pole fixtures"

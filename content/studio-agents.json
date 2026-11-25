@@ -1,0 +1,164 @@
+[
+  {
+    "id": "builder-vs-studio",
+    "title": "Agent Builder vs. Copilot Studio: Choosing the Right Workshop",
+    "summary": "Use Agent Builder for fast Q&A, CSV audits, and email drafts. Step up to Copilot Studio when you want guided permit forms, Excel logging, or Teams dispatch alerts.",
+    "intro": {
+      "what": "Two connected tools in Microsoft 365: Agent Builder (quick no-code setup inside Copilot Chat) and Copilot Studio (visual workflow builder with connectors and triggers).",
+      "features": "Any agent started in Agent Builder can be opened in Copilot Studio later without starting over.",
+      "exchange": "Read-only mail reply helpers stay in Agent Builder; automated supervisor alerts live in Copilot Studio.",
+      "m365": "Agent Builder connects directly to SharePoint libraries with zero connector setup.",
+      "developer": "Copilot Studio adds structured Topics, Adaptive Cards, Excel/SharePoint write actions, and event triggers.",
+      "sources": [
+        [
+          "Microsoft \u00b7 Choose between Agent Builder and Copilot Studio",
+          "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-experience"
+        ]
+      ]
+    },
+    "sections": [
+      {
+        "title": "Which One Fits Your Task?",
+        "paragraphs": [
+          "Choose Agent Builder when staff just need fast answers, table checks, or draft emails inside chat. Choose Copilot Studio when the agent needs to collect structured intake fields (like Department, Event Date, Guests, Charter Buses) and write a new row into your team's shared tracker."
+        ],
+        "table": {
+          "columns": [
+            "Parking & Transit Task",
+            "Agent Builder",
+            "Copilot Studio"
+          ],
+          "rows": [
+            [
+              "Look up permit rates, shuttle hours & tow rules",
+              "Best Choice",
+              "Supported"
+            ],
+            [
+              "Audit pasted CSV occupancy or maintenance logs",
+              "Best Choice",
+              "Supported"
+            ],
+            [
+              "Draft polite citation appeal decisions",
+              "Best Choice",
+              "Supported"
+            ],
+            [
+              "Collect event permit intake & write to Excel",
+              "No",
+              "Best Choice"
+            ],
+            [
+              "Auto-post Teams alert on >40 guest overflow",
+              "No",
+              "Best Choice"
+            ]
+          ]
+        },
+        "sources": [
+          [
+            "Microsoft \u00b7 Choose between Agent Builder and Copilot Studio",
+            "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-experience"
+          ]
+        ]
+      }
+    ],
+    "tags": [
+      "agent-builder",
+      "copilot-studio"
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "interactive-intake-and-actions",
+    "title": "Level 4 Action Agents: Event Permit & Charter Bus Intake",
+    "summary": "Design a guided intake agent that collects event details one question at a time, checks Lot D overflow rules, and previews a summary card before saving.",
+    "intro": {
+      "what": "Action agents turn messy email requests into clean, validated rows in an Excel Online table or SharePoint List.",
+      "features": "Always use the Preview Before Writing rule: display a confirmation card so the user verifies dates, guest counts, and bus counts before saving.",
+      "exchange": "Prepare standardized event confirmation notices ready for coordinator approval.",
+      "m365": "Uses Power Platform Excel Online or SharePoint connectors with user confirmation enabled.",
+      "developer": "Structured Topics enforce data types (Date, Number, Multiple Choice) so bad data never enters the tracker.",
+      "sources": [
+        [
+          "Microsoft \u00b7 Add actions and tools to agents in Copilot Studio",
+          "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-plugin-actions"
+        ]
+      ]
+    },
+    "sections": [
+      {
+        "title": "The Four-Step Intake Safety Pattern",
+        "paragraphs": [
+          "1. Ask missing details one at a time: Department, Event Date, Guest Vehicles, and Charter Buses.",
+          "2. Apply capacity rules automatically: If Guest Vehicles > 40, recommend Lot D Overflow per Rule EV-01; if Charter Buses > 4, flag the North Bus Apron 4-bus limit per Rule EV-02.",
+          "3. Display a Summary Confirmation Card showing calculated pass cost ($8 x Guests per Rule VP-02) and asking 'Confirm and log this request?'",
+          "4. Only after the user clicks Confirm does the agent append the row and return a receipt ID."
+        ],
+        "sources": [
+          [
+            "Microsoft \u00b7 Add actions and tools to agents in Copilot Studio",
+            "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-plugin-actions"
+          ]
+        ]
+      }
+    ],
+    "tags": [
+      "copilot-studio",
+      "intake",
+      "actions"
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "autonomous-and-multi-agent",
+    "title": "Level 5: Event Triggers & Multi-Agent Dispatch Hub",
+    "summary": "Connect specialist agents\u2014Rulebook Helper, Fleet & Gate Log Analyst, and Event Permit Intake\u2014behind one unified Operations Front Desk.",
+    "intro": {
+      "what": "Instead of overloading one agent with every manual and spreadsheet in the department, connect focused specialist agents under a parent router.",
+      "features": "Supports automated triggers (alerting dispatch on ADA lift faults or >40-car events) and multi-agent routing.",
+      "exchange": "Route incoming inquiries to the right specialist queue while keeping human sign-off on enforcement or dispatch actions.",
+      "m365": "Each child agent stays small (1\u20133 files) so answers stay fast, accurate, and easy to audit.",
+      "developer": "Uses Copilot Studio event triggers and multi-agent orchestration.",
+      "sources": [
+        [
+          "Microsoft \u00b7 Orchestrate multiple agents in Copilot Studio",
+          "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-orchestrate-agents"
+        ]
+      ]
+    },
+    "sections": [
+      {
+        "title": "How Three Specialists Work Together",
+        "paragraphs": [
+          "When a coordinator asks: 'Can 55 conference guests park in Lot B on Saturday, and is Bus 12's wheelchair lift fixed?', the Front-Desk Router sends the first half to the Rulebook & Event Specialist (which cites Rule EV-01 requiring Lot D Overflow for >40 vehicles and Rule VP-02 for $8 passes) and the second half to the Fleet Maintenance Specialist (which flags Ticket T-506 open on BUS-12 and cites the 20-minute ADA backup SLA in Rule SH-03)."
+        ],
+        "sources": [
+          [
+            "Microsoft \u00b7 Orchestrate multiple agents in Copilot Studio",
+            "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-orchestrate-agents"
+          ]
+        ]
+      }
+    ],
+    "tags": [
+      "multi-agent",
+      "dispatch",
+      "triggers"
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  }
+]

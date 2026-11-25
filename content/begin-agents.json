@@ -1,0 +1,560 @@
+[
+  {
+    "id": "first-project",
+    "title": "Try a Mini-Agent Right Here (Shuttle & Pier Practice Desk)",
+    "summary": "Before opening Microsoft 365, test how a rule-bound transit helper compares an official shuttle schedule against a draft rider notice.",
+    "topic": "First steps",
+    "where": [
+      "Use the green Practice Desk right on this page. It works completely offline on any PC, Mac, or iPad."
+    ],
+    "actions": [
+      {
+        "title": "Read the official shuttle schedule",
+        "do": "Tap schedule.txt on the Practice Desk. Read the pier stop and departure time.",
+        "see": "You see Pier 6 and 9:15 a.m. on the same line.",
+        "stuck": "Tap schedule.txt once so its text loads in the note box."
+      },
+      {
+        "title": "Spot the mistake in the draft rider notice",
+        "do": "Tap notice.txt. Compare the departure time in the draft notice with schedule.txt.",
+        "see": "The draft says 9:50 a.m.\u2014which would make riders miss the 9:15 a.m. shuttle by 35 minutes.",
+        "stuck": "Compare the minutes in both notes: 9:15 vs. 9:50."
+      },
+      {
+        "title": "Fix the notice using the rule",
+        "do": "Tap Use 9:15 a.m. so the helper updates notice.txt from the official schedule.",
+        "see": "notice.txt updates to 9:15 a.m. while keeping Pier 6 and the hat reminder intact.",
+        "stuck": "If you tap Keep 9:50 a.m., the desk prompts you to re-check schedule.txt."
+      },
+      {
+        "title": "Verify both notes match",
+        "do": "Tap both files again to confirm the stop, time, and reminder match.",
+        "see": "Both files agree 100%. That is the exact job of a grounded Parking & Transit agent.",
+        "stuck": "Tap Start practice again anytime to reset."
+      }
+    ],
+    "roles": [
+      "Verify shuttle detour notices before posting at stops.",
+      "Check event parking flyers against approved lot hours.",
+      "Train new booth and dispatch staff on rule verification."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Overview of Microsoft 365 Copilot agents",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "how-to-get-started-blueprint",
+    "title": "How to Get Started: Your 30-Minute Launch Blueprint",
+    "summary": "A practical step-by-step launch plan covering account checks, SharePoint folder setup, picking your first high-value use case, and running a 3-question smoke test.",
+    "intro": {
+      "what": "Do not start by trying to automate your hardest workflow on day one. Follow a structured 30-minute launch sequence that guarantees early wins and zero data leaks.",
+      "features": "Combines a 2-minute license & browser check, a 10-minute SharePoint folder cleanup, a 10-minute Level 2 prototype, and a 3-minute smoke test.",
+      "m365": "Create one clean SharePoint folder ('Parking-Approved-SOPs') containing only current, approved policies\u2014never point an agent at a messy shared drive full of 2019 drafts.",
+      "exchange": "Pick one repetitive question your team answers 10+ times a week by email or phone as your very first agent.",
+      "developer": "Follow the 5-Level Agent Ladder: start in Agent Builder (Levels 1\u20133) and only move to Copilot Studio (Levels 4\u20135) once your Q&A rules are rock-solid.",
+      "sources": [
+        [
+          "Microsoft Learn \u00b7 Best practices for building declarative agents",
+          "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-instructions"
+        ]
+      ]
+    },
+    "sections": [
+      {
+        "title": "Five Practical Steps Before You Build Your First Real Agent",
+        "paragraphs": [
+          "Step 1 \u2014 Run the 2-Minute License & Browser Check: Confirm you can sign in to m365.cloud.microsoft/chat and see 'Create an agent' in the left sidebar. Bookmark that page so you never waste time hunting for the button.",
+          "Step 2 \u2014 Pick One High-Friction, Low-Risk Use Case: Choose a task where rules are already written down, questions happen repeatedly, and wrong guesses waste staff time\u2014such as visitor permit rates, shuttle hours, citation appeal deadlines, or shift handoff formatting.",
+          "Step 3 \u2014 Prepare a Clean SharePoint Folder ('Parking-Approved-SOPs'): Create a dedicated folder on your team's SharePoint site. Put only the active, approved handbook or rate sheet inside it, and give every rule a short ID like [Rule VP-01]. Move outdated drafts into a separate 'Archive' folder outside the agent's reach.",
+          "Step 4 \u2014 Build a Level 1 or Level 2 Prototype First: Open Agent Builder, paste clear numbered Instructions, attach your clean SharePoint folder, and toggle Web Search OFF so the agent cannot pull outside rules.",
+          "Step 5 \u2014 Run the 3-Question Smoke Test Before Sharing: Test (a) one standard question from page 1, (b) one tricky edge case, and (c) one topic NOT in your files to prove the agent says 'Not covered in our current handbook' instead of guessing."
+        ],
+        "table": {
+          "columns": [
+            "Step",
+            "Time",
+            "Action",
+            "Success Check"
+          ],
+          "rows": [
+            [
+              "1. Verify Access",
+              "2 min",
+              "Check myaccount.microsoft.com & m365.cloud.microsoft/chat",
+              "'Create an agent' button is visible and clickable"
+            ],
+            [
+              "2. Pick Use Case",
+              "5 min",
+              "Choose one repetitive Q&A or formatting task",
+              "Rules are clear and non-confidential"
+            ],
+            [
+              "3. Clean Folder",
+              "10 min",
+              "Create 'Parking-Approved-SOPs' in SharePoint with active docs",
+              "Zero outdated drafts inside the folder"
+            ],
+            [
+              "4. Build & Fence",
+              "10 min",
+              "Configure Instructions + Knowledge; turn Web Search OFF",
+              "Preview cites exact Rule IDs"
+            ],
+            [
+              "5. Smoke Test",
+              "3 min",
+              "Ask 1 easy, 1 edge-case, and 1 out-of-scope question",
+              "Refuses to guess on the out-of-scope question"
+            ]
+          ]
+        },
+        "sources": [
+          [
+            "Microsoft Learn \u00b7 Build agents with Agent Builder",
+            "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-build"
+          ]
+        ]
+      }
+    ],
+    "tags": [
+      "getting-started",
+      "blueprint",
+      "checklist"
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "tools-and-setup",
+    "title": "Tools & Software Needed: Zero Desktop Installs Required",
+    "summary": "See every web portal, Microsoft 365 app, and optional add-on involved in building and running Copilot agents\u2014with zero local software installation.",
+    "intro": {
+      "what": "Everything required to build, test, and share Copilot agents runs 100% in your web browser and standard Microsoft 365 apps\u2014nothing needs to be installed on your work computer.",
+      "features": "You use two connected web workshops depending on complexity: Agent Builder (inside m365.cloud.microsoft/chat) for fast Q&A and drafting helpers, and Copilot Studio (copilotstudio.microsoft.com) for structured intake forms, connectors, and autonomous triggers.",
+      "m365": "SharePoint Online, OneDrive for Business, Excel Online, and Microsoft Teams serve as your agent's filing cabinet, database, and team delivery channel.",
+      "exchange": "Outlook on the web or New Outlook automatically surfaces your pinned agents in the Copilot side pane when drafting replies.",
+      "developer": "Only professional software engineers building custom-coded API plugins ever need Visual Studio Code or the Microsoft 365 Agents Toolkit\u2014everyday builders never touch code.",
+      "sources": [
+        [
+          "Microsoft Learn \u00b7 Choose between Agent Builder and Copilot Studio",
+          "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-experience"
+        ]
+      ]
+    },
+    "sections": [
+      {
+        "title": "The Complete Tool Checklist (What You Actually Need)",
+        "paragraphs": [
+          "One of the biggest misconceptions about building AI agents is that you need special developer software, local runtimes, or IT admin installation privileges on your PC. You do not. If you can open a modern web browser and sign in to your work Microsoft 365 account, you already have the entire authoring environment.",
+          "The table below maps every tool in the Microsoft agent ecosystem, whether anything is installed locally, and who actually needs to use it."
+        ],
+        "table": {
+          "columns": [
+            "Tool / Portal",
+            "Install Needed?",
+            "What It Does",
+            "Who Needs It"
+          ],
+          "rows": [
+            [
+              "Modern Web Browser (Edge, Chrome, Safari)",
+              "Already on PC/Mac",
+              "Runs all Microsoft 365 & Copilot Studio portals",
+              "Everyone (Required)"
+            ],
+            [
+              "Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat)",
+              "None (Web App)",
+              "Hosts Agent Builder for Levels 1\u20133 agents",
+              "All Builders & End Users"
+            ],
+            [
+              "Microsoft Copilot Studio (copilotstudio.microsoft.com)",
+              "None (Web App)",
+              "Full visual workshop for Topics, Actions & Triggers (Levels 4\u20135)",
+              "Level 4\u20135 Workflow Builders"
+            ],
+            [
+              "SharePoint Online & OneDrive",
+              "None (Web App)",
+              "Stores approved handbooks, detour PDFs & spreadsheets",
+              "All Builders (Knowledge)"
+            ],
+            [
+              "Microsoft Teams (Desktop, Web, or Mobile)",
+              "Standard M365 App",
+              "Where staff pin, @mention, and chat with shared agents",
+              "All End Users & Teams"
+            ],
+            [
+              "Power Automate (make.powerautomate.com)",
+              "None (Web App)",
+              "Optional background flows for complex multi-system approvals",
+              "Advanced Level 4\u20135 Builders"
+            ],
+            [
+              "VS Code + Microsoft 365 Agents Toolkit",
+              "Optional Desktop App",
+              "Pro-code SDK for custom TypeScript/C# APIs",
+              "IT / Software Developers Only"
+            ]
+          ]
+        },
+        "sources": [
+          [
+            "Microsoft Learn \u00b7 Choose between Agent Builder and Copilot Studio",
+            "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-experience"
+          ]
+        ]
+      },
+      {
+        "title": "How Agent Builder and Copilot Studio Fit Together",
+        "paragraphs": [
+          "Microsoft powers both Agent Builder and the full Copilot Studio workshop using the exact same underlying Copilot Studio engine. When you click 'Create an agent' inside Microsoft 365 Copilot Chat, you are using the streamlined, no-code Agent Builder interface.",
+          "If you later outgrow Agent Builder\u2014for example, when you want your agent to ask 4 intake questions in strict order and append a row into Excel Online\u2014you simply open copilotstudio.microsoft.com (or click 'Open in Copilot Studio') and continue enhancing the exact same agent without starting over."
+        ],
+        "sources": [
+          [
+            "Microsoft Learn \u00b7 Build agents with Agent Builder",
+            "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-build"
+          ]
+        ]
+      }
+    ],
+    "tags": [
+      "tools",
+      "setup",
+      "copilot-studio",
+      "install"
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "licensing-requirements-2026",
+    "title": "2026 Licensing Guide: What Licenses Are Required?",
+    "summary": "A clear, jargon-free breakdown of Microsoft 365 Copilot licenses, included Copilot Chat rights, and Copilot Studio credit packs or pay-as-you-go meters.",
+    "intro": {
+      "what": "Microsoft licenses Copilot agents through two main mechanisms: per-user seat subscriptions (Microsoft 365 Copilot) and tenant-wide usage meters (Copilot Studio Copilot Credits).",
+      "features": "If you hold a paid Microsoft 365 Copilot seat ($30/user/month, or $21/user/month for Copilot Business up to 300 users), building and using internal agents inside Teams, SharePoint, and M365 Copilot is included at no extra per-message fee.",
+      "m365": "Every user still requires a qualifying Microsoft 365 base subscription (such as Business Basic/Standard/Premium, E3, E5, F1, or F3) for Entra ID identity, SharePoint, and Teams access.",
+      "exchange": "Staff without a $30 M365 Copilot seat can still use Copilot Chat at no extra charge, and can run shared agents if IT links a Copilot Studio Credit Pack or Azure Pay-As-You-Go meter.",
+      "developer": "Authoring in Copilot Studio uses a $0 Copilot Studio User Author license (or Copilot Author role) paired with either a 25,000 Copilot Credits/month tenant pack, an Azure Pay-As-You-Go billing plan, or a Pre-Purchase Plan (P3).",
+      "sources": [
+        [
+          "Microsoft Learn \u00b7 Microsoft Copilot Studio Licensing & Billing",
+          "https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing"
+        ],
+        [
+          "Microsoft Learn \u00b7 Manage Copilot Credits and capacity",
+          "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management"
+        ]
+      ]
+    },
+    "sections": [
+      {
+        "title": "The Three Real-World Licensing Scenarios Explained",
+        "paragraphs": [
+          "Licensing is often the most confusing part of rolling out Copilot agents because Microsoft supports both named-user seats and shared consumption pools. Here is how the three real-world setups work in 2026:",
+          "Scenario 1 \u2014 You Hold a Full Microsoft 365 Copilot Seat ($30/user/month, or $21/user/month on Copilot Business): You have full access for internal team agents. You can open Agent Builder, attach SharePoint folders, build custom declarative agents, and use agents published to Teams, SharePoint, and Microsoft 365 Copilot with no separate per-message meter for internal M365 grounding.",
+          "Scenario 2 \u2014 You Only Have a Base Microsoft 365 Plan (E3, E5, Business Standard, F3, etc.) Without the $30 Add-On: You still get Microsoft 365 Copilot Chat included at no extra cost for web-grounded chat. However, to build or run custom agents that ground in SharePoint files or execute actions, your IT administrator must link a Copilot Studio consumption meter (Pay-As-You-Go via Azure, or a prepaid Copilot Credit capacity pack) to your environment.",
+          "Scenario 3 \u2014 You Build Autonomous Background Triggers or Public-Facing Agents (Copilot Studio): Whenever an agent wakes up on its own without a human user typing in chat (for example, monitoring a SharePoint list 24/7 and posting Teams alerts) or serves external website visitors, it consumes Copilot Credits from a tenant capacity pack (25,000 credits/month per pack) or Pay-As-You-Go meter\u2014even if the builder holds a $30 M365 Copilot license."
+        ],
+        "table": {
+          "columns": [
+            "License / Plan",
+            "Typical Pricing (2026)",
+            "What It Unlocks for Agents",
+            "Best For"
+          ],
+          "rows": [
+            [
+              "Base M365 Plan (E3/E5/F3/Business) + Copilot Chat",
+              "Included in M365 base plan",
+              "Free web-grounded chat; custom agents require IT-linked Copilot Credits",
+              "General staff before full Copilot rollout"
+            ],
+            [
+              "Microsoft 365 Copilot Add-On (or M365 E7)",
+              "$30/user/month (annual)",
+              "Full Agent Builder + SharePoint grounding + included internal Copilot Studio agent usage",
+              "Daily builders, supervisors & coordinators"
+            ],
+            [
+              "Microsoft 365 Copilot Business",
+              "$21/user/month (up to 300 users)",
+              "Same core M365 Copilot & internal agent rights for SMB Business plans",
+              "Organizations under 300 seats"
+            ],
+            [
+              "Copilot Studio User Author License",
+              "$0/user (requires tenant capacity)",
+              "Grants permission to author and manage agents in Copilot Studio",
+              "Assigned to each Level 4\u20135 agent builder"
+            ],
+            [
+              "Copilot Studio Capacity Pack / Pay-As-You-Go",
+              "25,000 Credits/mo pack or PAYG meter",
+              "Powers autonomous triggers, external channels & unlicensed M365 agent users",
+              "Department-wide bots & automated workflows"
+            ]
+          ]
+        },
+        "sources": [
+          [
+            "Microsoft Learn \u00b7 Microsoft Copilot Studio Licensing & Billing",
+            "https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing"
+          ]
+        ]
+      }
+    ],
+    "tags": [
+      "licensing",
+      "cost",
+      "credits",
+      "copilot-studio"
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "verify-your-license",
+    "title": "How an End User Can Verify Their License & Access (2-Minute Self-Check)",
+    "summary": "Follow four quick browser checks any everyday end user can run\u2014with zero IT admin privileges\u2014to confirm your exact license and agent permissions.",
+    "where": [
+      "Open your work browser (Edge, Chrome, or Safari) signed in to your organization's Microsoft 365 account."
+    ],
+    "actions": [
+      {
+        "title": "Check 1: Inspect Your Assigned Subscriptions (myaccount.microsoft.com)",
+        "do": "Go to https://myaccount.microsoft.com and click Subscriptions (or View subscriptions) in the left menu. Scan the list for 'Microsoft 365 Copilot', 'Microsoft 365 Copilot Business', 'Microsoft 365 E7', or 'Microsoft Copilot Studio'.",
+        "see": "You see your exact assigned product names. If 'Microsoft 365 Copilot' is listed, you have full per-seat Agent Builder and internal agent rights.",
+        "stuck": "If only 'Microsoft 365 E3/E5' or 'Business Standard' appears, you do not have a dedicated $30 Copilot seat yet\u2014proceed to Check 2 to see if IT enabled tenant-wide Agent Builder or Pay-As-You-Go access."
+      },
+      {
+        "title": "Check 2: Test the 'Create an Agent' Door in Copilot Chat",
+        "do": "Open https://m365.cloud.microsoft/chat and expand the left-hand navigation panel. Look for 'Agents' and 'Create an agent' (or 'New agent'). Click it and open the Configure tab.",
+        "see": "If the split-screen Agent Builder opens and the Knowledge section lets you browse SharePoint/OneDrive files, your account is ready for Levels 1\u20133 immediately.",
+        "stuck": "If 'Create an agent' is missing or greyed out, your IT admin has restricted agent authoring in the Microsoft 365 Admin Center Integrated Apps settings."
+      },
+      {
+        "title": "Check 3: Check Your Copilot Studio Author Access & Environment",
+        "do": "Open https://copilotstudio.microsoft.com in a new tab. Look at the top-right Environment picker and click the Settings gear icon -> Plan / Licensing (or try clicking + Create -> New agent).",
+        "see": "If you land on the Copilot Studio Home workspace and can open 'New agent', you have active Copilot Studio authoring rights (either via your M365 Copilot seat or a $0 Copilot Studio User License + environment billing plan).",
+        "stuck": "If a prompt asks you to 'Start a free trial' or says 'Contact your admin for a license,' you lack either the $0 Copilot Studio User License or an active tenant credit/PAYG plan."
+      },
+      {
+        "title": "Check 4: Verify SharePoint Knowledge Access (The Two-Lock Check)",
+        "do": "Open your team's SharePoint library in the browser and verify you can open and read the handbook files you plan to use.",
+        "see": "You can view the files cleanly without requesting access. Remember: an agent can only read SharePoint files you yourself can open.",
+        "stuck": "If you get 'Access Denied' in SharePoint, ask your team lead or site owner for Read/View access before building your agent."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Copy-Paste Email to Send IT If Anything Is Missing",
+        "paragraphs": [
+          "If Checks 1\u20133 show that 'Create an agent' or Copilot Studio is blocked on your account, you do not need to guess technical license names. Copy and send this short note to your IT Help Desk so they can turn on the exact right toggle in two minutes:",
+          "\"Hi IT Team \u2014 I am building a team knowledge helper in Microsoft 365 Copilot. Could you please verify: (1) That my account has either a Microsoft 365 Copilot license OR a $0 Copilot Studio User License / Copilot Author role assigned, (2) That 'Create an agent' (Agent Builder) is enabled for my user group in the M365 Admin Center, and (3) Which shared SharePoint library we should use for approved team SOPs? Thank you!\""
+        ],
+        "sources": [
+          [
+            "Microsoft Learn \u00b7 Manage Copilot agents in the Microsoft 365 admin center",
+            "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps"
+          ],
+          [
+            "Microsoft Learn \u00b7 Assign Copilot Studio user licenses",
+            "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-assignment"
+          ]
+        ]
+      }
+    ],
+    "roles": [
+      "Confirm your exact Copilot license tier before starting a team pilot.",
+      "Diagnose why 'Create an agent' or SharePoint files might not appear.",
+      "Give IT clear, exact license names if access needs to be enabled."
+    ],
+    "tags": [
+      "licensing",
+      "verification",
+      "self-check",
+      "troubleshooting"
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "open-agent-builder",
+    "title": "Open Agent Builder in Microsoft 365 Copilot",
+    "summary": "Find the Create an agent button in Microsoft 365 Copilot and tour the Describe and Configure tabs.",
+    "topic": "First steps",
+    "where": [
+      "Open Edge, Chrome, or Safari on your computer and go to m365.cloud.microsoft/chat."
+    ],
+    "actions": [
+      {
+        "title": "Open Microsoft 365 Copilot Chat",
+        "do": "Sign in at m365.cloud.microsoft/chat and look at the left sidebar.",
+        "see": "You see Chats, Agents, and Create an agent (or New agent).",
+        "stuck": "If the left sidebar is hidden, click the sidebar toggle icon in the top-left corner."
+      },
+      {
+        "title": "Click Create an agent",
+        "do": "Click Create an agent to open the split-screen workshop.",
+        "see": "Building settings appear on the left, and a private Preview chat appears on the right.",
+        "stuck": "If Create an agent is unavailable, ask your IT team to enable Copilot Agent Builder."
+      },
+      {
+        "title": "Switch from Describe to Configure",
+        "do": "Click the Configure tab at the top-left so you can see Name, Description, Instructions, Knowledge, Capabilities, and Starter prompts.",
+        "see": "Every rule and file link sits in plain sight where you can edit it cleanly.",
+        "stuck": "Use Describe to brainstorm, then always check Configure before sharing with your team."
+      },
+      {
+        "title": "Test privately in Preview",
+        "do": "Use the right-hand Preview pane to test questions before saving or sharing.",
+        "see": "Nobody else on your team can see your agent until you click Create and Share.",
+        "stuck": "Start a fresh preview chat whenever you edit Instructions."
+      }
+    ],
+    "roles": [
+      "Open the agent workshop on a booth, dispatch, or office PC.",
+      "Inspect exact agent settings in Configure.",
+      "Test rules privately before sharing."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Build agents with Agent Builder",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-build"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "build-first-prompt-agent",
+    "title": "Build Your First 5-Minute Helper (Lot & Gate Shift Briefer)",
+    "summary": "Create a zero-file helper that turns messy radio or booth notes into a clean shift handoff update.",
+    "topic": "First steps",
+    "where": [
+      "Inside Agent Builder (m365.cloud.microsoft/chat -> Create an agent -> Configure)."
+    ],
+    "actions": [
+      {
+        "title": "Name your helper",
+        "do": "Set Name to: Shift Handoff Briefer. Set Description to: Turns rough booth, gate, and shuttle notes into a clean shift handoff with missing info flagged.",
+        "see": "The right-hand Preview header updates immediately.",
+        "stuck": "Keep titles short so they fit cleanly on tablets and phones."
+      },
+      {
+        "title": "Paste numbered Instructions",
+        "do": "In Instructions, paste: 1. Rewrite rough shift notes into a clear, plain-English handoff. 2. Group bullets under Facility/Route, What Happened, and Action Needed. 3. Never guess repair times, plate numbers, or staff names. 4. List any missing time or owner under Missing Details.",
+        "see": "Numbered rules keep every shift summary consistent.",
+        "stuck": "Avoid vague instructions; tell the agent exact headings to use."
+      },
+      {
+        "title": "Add 2 Starter Prompts",
+        "do": "Add: (1) Format my shift handoff notes, and (2) Turn these radio notes into an urgent maintenance alert.",
+        "see": "Clickable prompt buttons appear in Preview.",
+        "stuck": "Starter prompts help busy booth and field staff use the agent in one click."
+      },
+      {
+        "title": "Test with real-style rough notes",
+        "do": "Type in Preview: garage 2 north gate arm stuck up at 740am. cones out. maintenance paged. need relief at booth 3 by noon.",
+        "see": "Clean structured handoff with Missing Details flagging that maintenance ETA and Booth 3 relief person are not named yet.",
+        "stuck": "If it invents an ETA, tighten Rule 3 to say: Write 'Not stated' for missing times."
+      }
+    ],
+    "roles": [
+      "Standardize morning/evening shift handoffs across booths and dispatch.",
+      "Turn quick field notes into supervisor updates.",
+      "Catch missing details before shift change."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Write effective instructions for declarative agents",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-instructions"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "add-handbook-knowledge",
+    "title": "Connect the Parking & Transit Handbook (Knowledge Grounding)",
+    "summary": "Attach Parking-Transit-Handbook.txt and turn Web Search OFF so your agent quotes real Rule IDs instead of guessing.",
+    "topic": "First steps",
+    "where": [
+      "Download the Practice Kit from the home page and upload Parking-Transit-Handbook.txt to OneDrive or SharePoint."
+    ],
+    "actions": [
+      {
+        "title": "Attach Parking-Transit-Handbook.txt",
+        "do": "In Configure -> Knowledge, click Add knowledge and select Parking-Transit-Handbook.txt.",
+        "see": "The handbook appears in the Knowledge sources list.",
+        "stuck": "For shared team agents, store the handbook in a shared SharePoint library."
+      },
+      {
+        "title": "Turn Web Search OFF",
+        "do": "Under Capabilities, toggle Web search OFF so the agent cannot mix up your campus/municipal rules with another city's parking laws.",
+        "see": "Your agent is now locked inside your Approved Knowledge Fence.",
+        "stuck": "Never leave Web search ON for policy, citation, or fee lookup agents."
+      },
+      {
+        "title": "Require Rule ID citations",
+        "do": "In Instructions, type: Answer ONLY using Parking-Transit-Handbook.txt. Always cite the exact Rule ID in brackets (such as [Rule VP-01] or [Rule SH-03]). If a topic is not in the file, say: 'Not covered in our handbook\u2014please check with Parking Dispatch.'",
+        "see": "Every answer includes a clickable citation and rule number.",
+        "stuck": "Test with an unlisted question like 'Do you offer motorcycle permits?'"
+      },
+      {
+        "title": "Test a multi-rule question",
+        "do": "Ask Preview: 'Can an event guest park overnight with a $10 daily pass, and is there a Sunday shuttle?'",
+        "see": "Says No to overnight parking without a 48-hour written safety variance [Rule VP-03] and No Sunday shuttle [Rule SH-02].",
+        "stuck": "If either rule is missed, check that Web search is OFF."
+      }
+    ],
+    "roles": [
+      "Answer visitor permit, shuttle headway, and citation appeal questions in seconds.",
+      "Stop staff from guessing fees or tow rules.",
+      "Keep answers tied to approved handbook sections."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Knowledge sources in Agent Builder",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-knowledge"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  }
+]

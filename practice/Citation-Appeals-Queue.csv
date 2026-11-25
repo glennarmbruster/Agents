@@ -1,0 +1,5 @@
+AppealID,PlateState,CitationCode,CitationDate,AppealDate,PriorUnpaid,DriverNote
+APP-301,TX-8821,No Permit Displayed,2026-11-12,2026-11-20,0,"First visit, hangtag slipped onto dashboard upside down"
+APP-302,TX-4410,Fire Lane Obstruction,2026-11-21,2026-11-22,0,"Only stopped 3 minutes to drop off boxes"
+APP-303,OK-1904,Expired Meter,2026-10-25,2026-11-18,3,"Forgot to extend session in app"
+APP-304,TX-7732,Overtime Zone,2026-11-15,2026-11-24,1,"Meeting ran late, paid for 2 hours"

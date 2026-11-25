@@ -1,0 +1,7 @@
+TicketID,AssetType,AssetID,Location,ReportedDate,ResolvedDate,Notes
+T-501,Gate Arm,GA-02N,Garage 2 North,2026-11-18,2026-11-18,"Sensor cleaned, arm cycled 5 times"
+T-502,Pay Station,PS-04W,Lot B West,2026-11-19,,"Card reader screen frozen, awaiting parts"
+T-503,Shuttle Bus,BUS-12,Route Loop A,2026-11-20,2026-11-21,"Replaced ADA wheelchair lift hydraulic seal"
+T-504,Gate Arm,GA-02N,Garage 2 North,2026-11-22,,"Repeat jam on entry lane 2"
+T-505,EV Charger,EV-09,Garage 1 Level 2,2026-11-22,2026-11-23,"Reset breaker and tested J1772 plug"
+T-506,Shuttle Bus,BUS-12,Route Loop A,2026-11-24,,"Check-engine light and slow lift deployment"

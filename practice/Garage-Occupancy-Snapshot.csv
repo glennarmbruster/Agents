@@ -1,0 +1,5 @@
+Facility,TotalSpaces,OccupiedSpaces,ReservedEventSpaces,StatusNote
+Garage 1,450,446,0,Near capacity - commuters only
+Garage 2,600,410,30,Normal operations
+Lot B,320,275,20,Filling steadily
+Lot D Overflow,500,45,60,Open for event overflow & bus staging

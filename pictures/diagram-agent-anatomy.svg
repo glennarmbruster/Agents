@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 250" role="img" aria-labelledby="t2 d2">
+          <title id="t2">The Four Building Blocks of a Copilot Agent</title>
+          <desc id="d2">Four side-by-side cards showing Name and Description, Instructions, Knowledge Sources, and Capabilities or Actions.</desc>
+          <rect x="2" y="2" width="756" height="246" rx="12" fill="#faf6ea" stroke="#c1bcab" stroke-width="2"/>
+          <text x="28" y="38" fill="#145756" font-family="Georgia,serif" font-size="22">The Four Building Blocks of Every Agent</text>
+
+          <rect x="24" y="58" width="166" height="166" rx="8" fill="#fffdf6" stroke="#145756" stroke-width="2"/>
+          <text x="38" y="84" fill="#8b571b" font-family="system-ui,sans-serif" font-size="11" font-weight="700">PART 1 · NAMETAG</text>
+          <text x="38" y="108" fill="#182c2d" font-family="Georgia,serif" font-size="18">Name &amp; Icon</text>
+          <text x="38" y="134" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">Tells teammates</text>
+          <text x="38" y="152" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">what this helper</text>
+          <text x="38" y="170" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">is for before</text>
+          <text x="38" y="188" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">they click it.</text>
+
+          <rect x="206" y="58" width="166" height="166" rx="8" fill="#fffdf6" stroke="#145756" stroke-width="2"/>
+          <text x="220" y="84" fill="#8b571b" font-family="system-ui,sans-serif" font-size="11" font-weight="700">PART 2 · RULEBOOK</text>
+          <text x="220" y="108" fill="#182c2d" font-family="Georgia,serif" font-size="18">Instructions</text>
+          <text x="220" y="134" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">Step-by-step</text>
+          <text x="220" y="152" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">rules on how to</text>
+          <text x="220" y="170" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">answer, format,</text>
+          <text x="220" y="188" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">and say "I don't know."</text>
+
+          <rect x="388" y="58" width="166" height="166" rx="8" fill="#fffdf6" stroke="#145756" stroke-width="2"/>
+          <text x="402" y="84" fill="#8b571b" font-family="system-ui,sans-serif" font-size="11" font-weight="700">PART 3 · LIBRARY</text>
+          <text x="402" y="108" fill="#182c2d" font-family="Georgia,serif" font-size="18">Knowledge</text>
+          <text x="402" y="134" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">Approved Word,</text>
+          <text x="402" y="152" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">PDF, or SharePoint</text>
+          <text x="402" y="170" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">files it reads for</text>
+          <text x="402" y="188" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">real facts.</text>
+
+          <rect x="570" y="58" width="166" height="166" rx="8" fill="#edf1e7" stroke="#8b571b" stroke-width="2"/>
+          <text x="584" y="84" fill="#8b571b" font-family="system-ui,sans-serif" font-size="11" font-weight="700">PART 4 · HANDS</text>
+          <text x="584" y="108" fill="#182c2d" font-family="Georgia,serif" font-size="18">Actions &amp; Tools</text>
+          <text x="584" y="134" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">Optional skills like</text>
+          <text x="584" y="152" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">web search, charts,</text>
+          <text x="584" y="170" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">or sending a ticket</text>
+          <text x="584" y="188" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">(Copilot Studio).</text>
+        </svg>

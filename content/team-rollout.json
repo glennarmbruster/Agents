@@ -1,0 +1,116 @@
+[
+  {
+    "id": "sharing-and-permissions",
+    "title": "Sharing Agents Across Booths, Dispatch & Office Staff",
+    "summary": "Master the Two-Lock Rule so every shift can open your agent AND read the underlying SharePoint SOPs without permission errors.",
+    "intro": {
+      "what": "How to share an agent safely with your team while protecting sensitive enforcement or HR files.",
+      "features": "Copilot checks both the Agent Share Link (Lock 1) and the user's SharePoint file access (Lock 2).",
+      "exchange": "Never link private supervisor mailboxes or restricted scofflaw/HR folders to a general staff agent.",
+      "m365": "Put all shared handbooks and detour schedules in a team SharePoint library where all Parking & Transit staff have View access.",
+      "developer": "Manage group sharing scope in Agent Builder Share settings.",
+      "sources": [
+        [
+          "Microsoft \u00b7 Share and manage agents in Agent Builder",
+          "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-share"
+        ]
+      ]
+    },
+    "sections": [
+      {
+        "title": "The Two-Lock Rule in Plain English",
+        "paragraphs": [
+          "Lock 1 is the Agent Link\u2014who is allowed to open the agent chat screen. Lock 2 is SharePoint File Permissions\u2014which files Microsoft 365 allows that person to read. If you store Parking-Transit-Handbook.txt in your personal OneDrive and forget to share it, coworkers will open the agent and see 'No information found.' Move team knowledge files into your shared Parking & Transit SharePoint folder first!"
+        ],
+        "sources": [
+          [
+            "Microsoft \u00b7 Share and manage agents in Agent Builder",
+            "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-share"
+          ]
+        ]
+      }
+    ],
+    "tags": [
+      "sharing",
+      "permissions"
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "team-rollout-playbook",
+    "title": "Team Rollout & Semester Refresh Checklist",
+    "summary": "A four-step rollout habit so booth attendants, field supervisors, and office coordinators adopt your agents smoothly.",
+    "intro": {
+      "what": "A repeatable launch and maintenance checklist for Parking & Transportation teams.",
+      "features": "Solo 3-question test -> 2-shift Buddy Pilot -> Teams channel pin -> Semester/Event file refresh.",
+      "exchange": "Test ambiguous appeal and overflow cases before launching department-wide.",
+      "m365": "Assign a primary owner and one backup editor so rate or detour updates never wait on one person.",
+      "developer": "Re-run golden test questions whenever policy documents are revised.",
+      "sources": [
+        [
+          "Microsoft \u00b7 Manage and update your agents",
+          "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-manage"
+        ]
+      ]
+    },
+    "sections": [
+      {
+        "title": "Four Steps to a Smooth Team Launch",
+        "paragraphs": [
+          "1. Solo Smoke Test: Test 1 normal rate question, 1 Sunday/ADA edge case, and 1 unlisted question.",
+          "2. Buddy Pilot: Share with 1 booth attendant and 1 dispatcher for 24 hours. Add local lot nicknames (like 'North Deck' = Garage 2) to Instructions.",
+          "3. Team Launch: Pin the link in your Operations Teams channel with 3 starter prompts.",
+          "4. Semester & Event Refresh: Replace expired detour maps in SharePoint and archive old versions."
+        ],
+        "table": {
+          "columns": [
+            "Stage",
+            "Participants",
+            "Goal"
+          ],
+          "rows": [
+            [
+              "1. Solo Check",
+              "Builder",
+              "Verify Rule ID citations & refusal to guess"
+            ],
+            [
+              "2. Buddy Pilot",
+              "1 Booth + 1 Dispatch",
+              "Confirm SharePoint access & add local lot nicknames"
+            ],
+            [
+              "3. Team Launch",
+              "All Ops Staff",
+              "Pin in Teams + share 3 starter prompts"
+            ],
+            [
+              "4. Monthly Refresh",
+              "Owner / Backup",
+              "Archive old detour PDFs; re-test 3 sample prompts"
+            ]
+          ]
+        },
+        "sources": [
+          [
+            "Microsoft \u00b7 Manage and update your agents",
+            "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-manage"
+          ]
+        ]
+      }
+    ],
+    "tags": [
+      "rollout",
+      "checklist"
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  }
+]

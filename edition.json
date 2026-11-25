@@ -1,0 +1,37 @@
+{
+  "title": "All About Copilot Agents \u00b7 Parking & Transportation",
+  "version": 2,
+  "reviewed": "2026-11-25",
+  "groups": [
+    {
+      "title": "First Steps: Parking & Transit Quickstarts",
+      "file": "begin-agents.json",
+      "guide": true,
+      "reviewed": "2026-11-25"
+    },
+    {
+      "title": "Core Concepts & The Knowledge Fence",
+      "file": "core-agents.json",
+      "reviewed": "2026-11-25"
+    },
+    {
+      "title": "From Booth Helpers to Copilot Studio",
+      "file": "studio-agents.json",
+      "reviewed": "2026-11-25"
+    },
+    {
+      "title": "Sharing Across Booth, Dispatch & Office",
+      "file": "team-rollout.json",
+      "reviewed": "2026-11-25"
+    },
+    {
+      "title": "24 Hands-On Parking & Transit Labs (Simple to Complex)",
+      "track": "agents",
+      "file": "labs-agents.json",
+      "reviewed": "2026-11-25",
+      "startLabel": "Open Microsoft 365 Copilot Chat",
+      "startUrl": "https://m365.cloud.microsoft/chat",
+      "gettingStarted": "Sign in at m365.cloud.microsoft/chat, click Create an agent in the left sidebar, and use the sample files from the Parking & Transit Practice Kit."
+    }
+  ]
+}

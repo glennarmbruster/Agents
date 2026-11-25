@@ -1,0 +1,1248 @@
+[
+  {
+    "id": "lab-agents-01",
+    "title": "Level 1 Lab: Booth & Gate Shift Handoff Formatter",
+    "summary": "Build a zero-file helper that turns messy radio notes into a clean shift handoff and lists missing details.",
+    "level": "Starter",
+    "requires": "Open Microsoft 365 Copilot Chat -> Create an agent -> Configure.",
+    "features": "Saves formatting rules so every booth and patrol shift writes identical handoff summaries.",
+    "roles": [
+      "Turn rough gate or pay-station radio notes into a supervisor handoff.",
+      "Flag missing ETAs or staff names before shift change.",
+      "Standardize daily operations logs."
+    ],
+    "prompt": "You are the Parking & Transit Shift Handoff Formatter. Rewrite rough shift notes into: (1) A 1-sentence headline, (2) Bold bullets for Facility/Route, Incident, and Action Taken, and (3) A line called Missing Details listing any missing time, owner, or ETA. Never guess missing facts.",
+    "steps": [
+      {
+        "title": "Configure the Shift Handoff Formatter",
+        "text": "Paste the prompt into Instructions, set Web search OFF, and add a starter prompt: 'Format my shift handoff notes.'",
+        "help": "Numbered sections stop the agent from writing long paragraphs."
+      },
+      {
+        "title": "Test with an incomplete gate note",
+        "text": "Paste the sample radio note into the right-hand Preview pane.",
+        "help": "Notice there is no repair ETA or relief person named.",
+        "code": "Garage 2 north entry gate arm stuck up at 07:45. Cones placed. Tech paged."
+      },
+      {
+        "title": "Verify the first output",
+        "text": "Confirm the output lists 07:45, cones placed, and flags Repair ETA and Assigned Tech under Missing Details.",
+        "help": "If it invents a repair time, add: Write 'Unspecified' for missing times."
+      },
+      {
+        "title": "Run the follow-up update",
+        "text": "Reply: 'Tech Sam arrived 08:15, gate fixed 08:30.' Confirm Missing Details now says 'None.'",
+        "help": "Testing before and after updates proves accuracy."
+      }
+    ],
+    "check": [
+      "Extracts Garage 2 North, 07:45, and flags missing ETA/tech.",
+      "Clears Missing Details once Sam and 08:30 are supplied."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Build agents with Agent Builder",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-build"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-02",
+    "title": "Level 1 Lab: Polite Citation Appeal & Fee Reply Drafter",
+    "summary": "Turn blunt booth or enforcement notes into warm, clear driver emails under 100 words without promising unauthorized waivers.",
+    "level": "Starter",
+    "requires": "Agent Builder in Microsoft 365 Copilot Chat.",
+    "features": "Keeps fees, deadlines, and form requirements 100% exact while softening blunt notes.",
+    "roles": [
+      "Reply politely to drivers asking about appeal deadlines.",
+      "Explain lost permit replacement fees clearly.",
+      "Prevent staff from accidentally promising unauthorized fee waivers."
+    ],
+    "prompt": "You are the Parking Customer Reply Helper. Turn the staff member's short note into a polite, plain-English email under 100 words with a clear Subject line. Keep all fees, deadlines, and form rules exact. Never offer a waiver or refund unless the note explicitly authorizes one.",
+    "steps": [
+      {
+        "title": "Set up the Reply Helper",
+        "text": "Create an agent named Parking Customer Reply Helper with Web search OFF.",
+        "help": "Add starter prompt: 'Turn my quick note into a polite driver email.'"
+      },
+      {
+        "title": "Test with a blunt note",
+        "text": "Paste the sample note into Preview chat.",
+        "help": "Check that 14 days, $15, and signed loss form stay intact.",
+        "code": "appeal window is 14 calendar days from ticket date. lost permit replacement costs $15 plus signed loss declaration form."
+      },
+      {
+        "title": "Check word count and accuracy",
+        "text": "Verify the reply has a Subject line, stays under 100 words, and keeps $15 and 14 calendar days exact.",
+        "help": "If it runs over 100 words, ask it to trim greetings."
+      },
+      {
+        "title": "Test waiver refusal",
+        "text": "Ask: 'Tell them we will waive the $15 fee this once.' Verify it refuses because no waiver was authorized.",
+        "help": "Protects revenue and policy consistency."
+      }
+    ],
+    "check": [
+      "Produces a polite email under 100 words with 14 days, $15, and signed form.",
+      "Refuses to invent an unauthorized $15 fee waiver."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Write effective instructions for declarative agents",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-instructions"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-03",
+    "title": "Level 1 Lab: Rider Detour & Stop Closure Notice Generator",
+    "summary": "Turn quick shuttle dispatch notes into two matching messages: a 30-word rider text alert and a 3-bullet driver radio brief.",
+    "level": "Starter",
+    "requires": "Agent Builder in Microsoft 365 Copilot Chat.",
+    "features": "Writes different formats for riders and drivers from one single source note without changing times or stop numbers.",
+    "roles": [
+      "Publish rider detour alerts quickly during road work.",
+      "Brief shuttle drivers with exact stop numbers and start/end times.",
+      "Keep rider and driver notices 100% consistent."
+    ],
+    "prompt": "You are the Transit Detour Notice Helper. From the dispatch note provided, write: (1) A Rider Alert (max 30 words) with affected route, closed stop, alternate stop, and times, and (2) Three short Driver Radio Bullets with the exact same facts. Do not invent detour streets not in the note.",
+    "steps": [
+      {
+        "title": "Create the Detour Helper",
+        "text": "Paste the prompt into Instructions with Web search OFF.",
+        "help": "Separating Rider Alert and Driver Bullets avoids confusion."
+      },
+      {
+        "title": "Paste the dispatch note",
+        "text": "Send the sample closure note in Preview.",
+        "help": "Notice Stop 4 is closed and riders use Stop 5.",
+        "code": "Campus Loop Shuttle: Stop 4 Library closed Thursday 08:00 to 16:00 for crane work. Use Stop 5 Student Union instead."
+      },
+      {
+        "title": "Compare both outputs",
+        "text": "Verify both the Rider Alert and Driver Bullets state Stop 4 closed, Stop 5 alternate, and Thursday 08:00\u201316:00.",
+        "help": "Check that no extra street names were guessed."
+      },
+      {
+        "title": "Test a schedule extension",
+        "text": "Reply: 'Extended until 18:00.' Verify both notices update 16:00 to 18:00.",
+        "help": "Confirms fast updates during live field delays."
+      }
+    ],
+    "check": [
+      "Rider Alert is <=30 words and matches Driver Bullets on Stop 4, Stop 5, and 08:00\u201316:00.",
+      "Both update cleanly to 18:00 on follow-up."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Write effective instructions for declarative agents",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-instructions"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-04",
+    "title": "Level 1 Lab: Radio Code & Lot Nickname Translator",
+    "summary": "Build a quick-reference helper that translates local lot nicknames ('North Deck', 'Stadium Gravel') into official facility names.",
+    "level": "Starter",
+    "requires": "Agent Builder in Microsoft 365 Copilot Chat.",
+    "features": "Helps new hires and temporary event staff understand local radio shorthand immediately.",
+    "roles": [
+      "Onboard new booth and event staff on local lot nicknames.",
+      "Standardize incident reports with official facility IDs.",
+      "Prevent dispatch mix-ups between similar lot names."
+    ],
+    "prompt": "You are the Facility Name & Radio Translator. Use this exact map: 'North Deck' = Garage 2; 'Commuter Tower' = Garage 1; 'West Surface' = Lot B; 'Gravel Overflow' = Lot D Overflow; 'Bus Loop' = North Bus Apron. Rewrite any message using the official name followed by the nickname in parentheses. If a name is unknown, flag it as [Unknown Facility].",
+    "steps": [
+      {
+        "title": "Configure the Translator",
+        "text": "Paste the mapping rules into Instructions with Web search OFF.",
+        "help": "Embedding a small lookup table directly in Instructions is fast and reliable."
+      },
+      {
+        "title": "Test with radio slang",
+        "text": "Send the sample dispatch message in Preview.",
+        "help": "Check that all three nicknames map to official names.",
+        "code": "Send cones to West Surface, stage 2 charters at Bus Loop, and divert overflow from Commuter Tower to Gravel Overflow."
+      },
+      {
+        "title": "Verify official names",
+        "text": "Confirm the output names Lot B, North Bus Apron, Garage 1, and Lot D Overflow.",
+        "help": "Official names prevent tickets from being written to the wrong lot."
+      },
+      {
+        "title": "Test an unmapped nickname",
+        "text": "Ask about 'South Pier Lot.' Verify it flags [Unknown Facility] instead of guessing.",
+        "help": "Stops wrong assumptions on unfamiliar lot names."
+      }
+    ],
+    "check": [
+      "Maps West Surface->Lot B, Bus Loop->North Bus Apron, Commuter Tower->Garage 1, Gravel Overflow->Lot D Overflow.",
+      "Flags South Pier Lot as [Unknown Facility]."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Write effective instructions for declarative agents",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-instructions"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-05",
+    "title": "Level 2 Lab: Visitor Permit & Rate Rulebook Helper",
+    "summary": "Attach Parking-Transit-Handbook.txt and require the agent to cite Rule VP-01 through VP-03 for every visitor rate question.",
+    "level": "Starter",
+    "requires": "Agent Builder + Parking-Transit-Handbook.txt from the Practice Kit.",
+    "features": "Locks answers to your official rate sheet with Web search OFF.",
+    "roles": [
+      "Answer visitor permit fees and hours at the booth.",
+      "Explain internal department QR pass billing ($8 vs. $10).",
+      "Enforce the 48-hour overnight parking variance rule."
+    ],
+    "prompt": "You are the Visitor Permit Rulebook Helper. Answer ONLY using Parking-Transit-Handbook.txt. Always cite the exact Rule ID in brackets (e.g., [Rule VP-01]). If a rule is not in the file, say: 'Not covered in our handbook\u2014please check with Parking Dispatch.'",
+    "steps": [
+      {
+        "title": "Attach Parking-Transit-Handbook.txt",
+        "text": "In Configure -> Knowledge, upload or link Parking-Transit-Handbook.txt and toggle Web search OFF.",
+        "help": "Web search OFF keeps external rates out."
+      },
+      {
+        "title": "Ask a rate comparison question",
+        "text": "Paste the test question into Preview.",
+        "help": "Tests Rule VP-01 ($10 daily) vs. Rule VP-02 ($8 department QR pass).",
+        "code": "What is the difference between a regular daily visitor permit and a department-invited conference guest pass?"
+      },
+      {
+        "title": "Verify citations and hours",
+        "text": "Confirm it cites $10/day (7:00 a.m.\u201311:00 p.m., Lot B & Garage 2) [Rule VP-01] and $8/pass billed to department cost center [Rule VP-02].",
+        "help": "Both Rule IDs should appear in brackets."
+      },
+      {
+        "title": "Test overnight & unlisted rules",
+        "text": "Ask about overnight RV parking and monthly employee rates. Verify overnight cites [Rule VP-03] (48-hr written safety variance) and monthly employee rates says 'Not covered.'",
+        "help": "Proves the Knowledge Fence works."
+      }
+    ],
+    "check": [
+      "Accurately contrasts $10 [Rule VP-01] and $8 [Rule VP-02].",
+      "Cites [Rule VP-03] for overnight parking and refuses to guess employee monthly rates."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Knowledge sources in Agent Builder",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-knowledge"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-06",
+    "title": "Level 2 Lab: Shuttle Headway & ADA Backup SLA Lookup",
+    "summary": "Build a transit desk helper grounded in Section 2 of the handbook to answer weekday, weekend, and wheelchair-lift rules.",
+    "level": "Starter",
+    "requires": "Agent Builder + Parking-Transit-Handbook.txt.",
+    "features": "Gives dispatchers instant answers on shuttle headways and the 20-minute ADA backup van rule.",
+    "roles": [
+      "Answer rider questions about weekday vs. Saturday shuttle frequency.",
+      "Confirm there is no Sunday shuttle service.",
+      "Trigger the 20-minute ADA backup van protocol when a lift fails."
+    ],
+    "prompt": "You are the Shuttle & ADA Transit Helper. Answer ONLY from Parking-Transit-Handbook.txt. Cite exact Rule IDs ([Rule SH-01], [Rule SH-02], [Rule SH-03]). Always highlight ADA backup requirements in bold.",
+    "steps": [
+      {
+        "title": "Link the handbook",
+        "text": "Attach Parking-Transit-Handbook.txt and ensure Web search is OFF.",
+        "help": "Add starter prompt: 'What is our ADA wheelchair lift backup rule?'"
+      },
+      {
+        "title": "Test a Sunday & ADA scenario",
+        "text": "Send the two-part question in Preview.",
+        "help": "Tests Rules SH-02 and SH-03 together.",
+        "code": "1) Does the shuttle run on Sunday at 11 a.m.? 2) What must dispatch do if a wheelchair lift fails on Tuesday at 2 p.m.?"
+      },
+      {
+        "title": "Verify the response",
+        "text": "Check that it states No Sunday shuttle (Saturday only 9:00 a.m.\u20135:00 p.m., 30-min headway) [Rule SH-02], and dispatch must send an ADA backup van within 20 minutes [Rule SH-03].",
+        "help": "Ensure the 20-minute SLA is bolded."
+      },
+      {
+        "title": "Test out-of-scope route question",
+        "text": "Ask: 'Does the shuttle stop at the airport?' Confirm it says Not covered in our handbook.",
+        "help": "Keeps riders from getting bad directions."
+      }
+    ],
+    "check": [
+      "Cites [Rule SH-02] (no Sunday service) and [Rule SH-03] (20-minute ADA backup van).",
+      "Refuses to guess airport stops."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Knowledge sources in Agent Builder",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-knowledge"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-07",
+    "title": "Level 2 Lab: Citation Appeal, Boot & Tow Policy Advisor",
+    "summary": "Create an enforcement and appeals helper grounded in Section 3 (Rules AP-01 to AP-04) so staff apply boot and tow rules consistently.",
+    "level": "Starter",
+    "requires": "Agent Builder + Parking-Transit-Handbook.txt.",
+    "features": "Separates first-time warning eligibility from immediate fire-lane/ADA tows and 3-ticket boot rules.",
+    "roles": [
+      "Check whether a visitor qualifies for a first-time upside-down permit warning.",
+      "Verify the 14-calendar-day appeal deadline.",
+      "Apply the 3-unpaid-citations boot rule and immediate fire-lane tow rule."
+    ],
+    "prompt": "You are the Citation Appeals & Enforcement Advisor. Use ONLY Parking-Transit-Handbook.txt. Cite exact Rule IDs ([Rule AP-01] to [Rule AP-04]). Never grant a warning for Fire Lane or ADA ramp violations.",
+    "steps": [
+      {
+        "title": "Configure the Appeals Advisor",
+        "text": "Attach Parking-Transit-Handbook.txt, turn Web search OFF, and paste the Instructions.",
+        "help": "Strict safety rules prevent illegal waivers of fire-lane tickets."
+      },
+      {
+        "title": "Test two contrasting tickets",
+        "text": "Paste both scenarios into Preview.",
+        "help": "Case A is an honest permit slip; Case B is a fire lane violation.",
+        "code": "Case A: Visitor displayed valid permit upside down, appealed 6 days later, 0 prior tickets. Case B: Driver parked 3 minutes in a fire lane, appealed next day."
+      },
+      {
+        "title": "Check both rulings",
+        "text": "Verify Case A qualifies for a one-time warning within 14 days [Rule AP-01, Rule AP-02], while Case B is immediate tow with zero warning [Rule AP-04].",
+        "help": "Check that both Rule IDs appear."
+      },
+      {
+        "title": "Test scofflaw boot rule",
+        "text": "Ask: 'A car has 3 unpaid tickets from 45 days ago. Can we boot it?' Confirm Yes, citing [Rule AP-04].",
+        "help": "3+ unpaid citations older than 30 days triggers boot eligibility."
+      }
+    ],
+    "check": [
+      "Approves 1-time warning for Case A [AP-01/AP-02] and denies Case B fire lane [AP-04].",
+      "Confirms boot eligibility at 3+ unpaid tickets >30 days [AP-04]."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Knowledge sources in Agent Builder",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-knowledge"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-08",
+    "title": "Level 2 Lab: Interactive New-Hire Parking & Transit Quiz Coach",
+    "summary": "Turn Parking-Transit-Handbook.txt into a 4-question interactive quiz game that asks one question at a time and tracks score.",
+    "level": "Starter",
+    "requires": "Agent Builder + Parking-Transit-Handbook.txt.",
+    "features": "Active one-question-at-a-time coaching helps new booth and patrol hires master rules fast.",
+    "roles": [
+      "Train seasonal event staff on permit, shuttle, and tow rules.",
+      "Run quick 3-minute refresher quizzes at shift briefings.",
+      "Verify rule mastery without paper tests."
+    ],
+    "prompt": "You are the Parking & Transit Quiz Coach. Quiz the user with 4 short questions based ONLY on Parking-Transit-Handbook.txt, covering Permits, Shuttles, Appeals, and Events. Ask ONE question at a time and wait for the answer. Grade each reply as Correct or Not Quite, cite the Rule ID, and show the running score. At the end, show final score out of 4 and offer New Quiz.",
+    "steps": [
+      {
+        "title": "Set up the Quiz Coach",
+        "text": "Attach Parking-Transit-Handbook.txt, turn Web search OFF, and add starter prompt: 'Start my 4-question training quiz.'",
+        "help": "Bold 'ONE question at a time' so it never reveals all 4 at once."
+      },
+      {
+        "title": "Play Question 1 and 2",
+        "text": "Click the starter prompt, answer Question 1 right, and deliberately miss Question 2.",
+        "help": "Verify Question 2 explains the right answer with a Rule ID."
+      },
+      {
+        "title": "Complete Questions 3 and 4",
+        "text": "Finish the remaining two questions and check that the final score reads 3/4.",
+        "help": "Check the running math yourself."
+      },
+      {
+        "title": "Test New Quiz reset",
+        "text": "Type 'New Quiz' and confirm the score resets to 0 with a fresh question.",
+        "help": "Ready to share with new hires!"
+      }
+    ],
+    "check": [
+      "Asks 1 question per turn and cites Rule IDs after every reply.",
+      "Tracks score accurately and resets on 'New Quiz'."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Build agents with Agent Builder",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-build"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-09",
+    "title": "Level 3 Lab: Connect a Live SharePoint SOP & Detour Folder",
+    "summary": "Link your agent to a SharePoint folder so updating a detour notice or rate sheet in SharePoint automatically updates the agent.",
+    "level": "Intermediate",
+    "requires": "A SharePoint folder named Parking-Approved-SOPs containing Parking-Transit-Handbook.txt.",
+    "features": "Folder grounding eliminates rebuilding the agent every time a semester schedule or construction detour changes.",
+    "roles": [
+      "Keep booth and dispatch staff synced on active construction detours.",
+      "Update permit rates in SharePoint once and update every staff member's agent.",
+      "Avoid version confusion across shifts."
+    ],
+    "prompt": "You are the Live Operations Folder Helper. Answer ONLY from files inside the linked Parking-Approved-SOPs SharePoint folder. State the exact filename and Rule ID. If two files list different hours, quote both filenames and ask the user which is newer.",
+    "steps": [
+      {
+        "title": "Create the SharePoint folder",
+        "text": "In your team SharePoint site, create Parking-Approved-SOPs and upload Parking-Transit-Handbook.txt.",
+        "help": "Keep draft or archived maps outside this folder."
+      },
+      {
+        "title": "Link the folder in Agent Builder",
+        "text": "In Configure -> Knowledge, select the Parking-Approved-SOPs folder (not just the single file) and keep Web search OFF.",
+        "help": "Now new files dropped into that folder automatically join the agent's library."
+      },
+      {
+        "title": "Test before and after a live folder edit",
+        "text": "Ask: 'How many charter buses can stage at the North Bus Apron at once?' It should say 4 [Rule EV-02]. Edit the file in SharePoint to say 5, save, wait 2 minutes, and ask again in a fresh chat.",
+        "help": "Verify it updates to 5 automatically.",
+        "code": "How many charter buses can stage at the North Bus Apron at once, and what is the idle limit?"
+      },
+      {
+        "title": "Restore the practice rule",
+        "text": "Change the bus limit back to 4 in SharePoint so your practice file stays clean.",
+        "help": "Zero edits needed inside Agent Builder!"
+      }
+    ],
+    "check": [
+      "Reads 4 buses and 5-minute idle limit [Rule EV-02] from the SharePoint folder.",
+      "Reflects SharePoint file edits automatically in new chats."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Knowledge sources in Agent Builder",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-knowledge"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-10",
+    "title": "Level 3 Lab: Garage & Lot Occupancy Capacity Auditor",
+    "summary": "Feed Garage-Occupancy-Snapshot.csv into an agent that calculates fill percentages, flags >=90% Watch and >=95% Full facilities, and recommends diversions.",
+    "level": "Intermediate",
+    "requires": "Agent Builder + Parking-Transit-Handbook.txt + Garage-Occupancy-Snapshot.csv.",
+    "features": "Combines live occupancy math with Rule VP-01 and Rule EV-01 diversion rules.",
+    "roles": [
+      "Identify near-full commuter garages during peak morning rush.",
+      "Divert daily visitors to open garages with spare stalls.",
+      "Verify Lot D Overflow capacity for upcoming events."
+    ],
+    "prompt": "You are the Garage Capacity & Diversion Auditor. For each facility in the CSV: (1) Compute Total Used = OccupiedSpaces + ReservedEventSpaces, (2) Compute Fill % = Total Used / TotalSpaces, (3) Label >=95% as FULL-DIVERT, 85\u201394% as WATCH, and <85% as OPEN, and (4) Recommend diversion lots using Parking-Transit-Handbook.txt.",
+    "steps": [
+      {
+        "title": "Configure the Capacity Auditor",
+        "text": "Attach Parking-Transit-Handbook.txt in Knowledge and paste the Instructions above.",
+        "help": "Adding OccupiedSpaces + ReservedEventSpaces prevents double-booking event stalls."
+      },
+      {
+        "title": "Paste the occupancy snapshot",
+        "text": "Paste Garage-Occupancy-Snapshot.csv into Preview chat.",
+        "help": "Check Garage 1 (446/450 = 99.1%) and Lot B ((275+20)/320 = 92.2%).",
+        "code": "Facility,TotalSpaces,OccupiedSpaces,ReservedEventSpaces,StatusNote\nGarage 1,450,446,0,Near capacity - commuters only\nGarage 2,600,410,30,Normal operations\nLot B,320,275,20,Filling steadily\nLot D Overflow,500,45,60,Open for event overflow & bus staging"
+      },
+      {
+        "title": "Verify percentages and diversion advice",
+        "text": "Confirm Garage 1 is 99.1% FULL-DIVERT, Lot B is 92.2% WATCH, Garage 2 is 73.3% OPEN, and Lot D Overflow is 21.0% OPEN.",
+        "help": "Check that it recommends Garage 2 or Lot D Overflow for incoming visitors."
+      },
+      {
+        "title": "Test a sudden event surge",
+        "text": "Ask: 'If 40 more cars enter Lot B, what is its new Fill %?' Verify (335/320 = 104.7% -> OVER CAPACITY / FULL-DIVERT).",
+        "help": "Catches overflow before gates back up into the street."
+      }
+    ],
+    "check": [
+      "Computes 99.1% (Garage 1), 73.3% (Garage 2), 92.2% (Lot B), and 21.0% (Lot D Overflow).",
+      "Flags Garage 1 as FULL-DIVERT and recommends open facilities."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Knowledge sources in Agent Builder",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-knowledge"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-11",
+    "title": "Level 3 Lab: Event Permit & Charter Bus Triage Auditor",
+    "summary": "Audit Event-Permits-Sample.csv against Rules VP-02, EV-01, and EV-02 to compute department pass billing and catch lot/bus conflicts.",
+    "level": "Intermediate",
+    "requires": "Agent Builder + Parking-Transit-Handbook.txt + Event-Permits-Sample.csv.",
+    "features": "Cross-checks guest counts (>40 overflow rule), charter bus counts (max 4 apron rule), and $8/pass internal billing.",
+    "roles": [
+      "Audit weekly campus/municipal event parking requests.",
+      "Calculate internal department cost-center charges ($8/guest).",
+      "Catch requests that exceed Lot B/Garage 2 overflow thresholds or bus apron limits."
+    ],
+    "prompt": "You are the Event Permit & Bus Triage Auditor. Check each row against Parking-Transit-Handbook.txt: (1) Calculate QR pass cost at $8 x Guests [Rule VP-02], (2) Flag any request with >40 guests NOT assigned to Lot D Overflow [Rule EV-01], (3) Flag any request with >4 charter buses [Rule EV-02], and (4) List Denied or Pending items needing action.",
+    "steps": [
+      {
+        "title": "Set up the Event Auditor",
+        "text": "Keep Parking-Transit-Handbook.txt in Knowledge and paste the Instructions.",
+        "help": "Tests three rules at once against a 6-row CSV."
+      },
+      {
+        "title": "Paste Event-Permits-Sample.csv",
+        "text": "Send the 6 sample event rows in Preview.",
+        "help": "Watch REQ-102 (45 guests in Lot B), REQ-105 (60 guests in Garage 2), and REQ-106 (5 charter buses).",
+        "code": "RequestID,Department,EventDate,Guests,LotRequested,CharterBuses,Status\nREQ-101,Biology,2026-12-03,12,Garage 2,0,Approved\nREQ-102,History,2026-12-04,45,Lot B,1,Pending\nREQ-103,Athletics,2026-12-05,8,Garage 1,0,Denied - Lot Full\nREQ-104,Chemistry,2026-12-06,20,Lot B,0,Approved\nREQ-105,Music,2026-12-07,60,Garage 2,2,Pending\nREQ-106,Admissions,2026-12-08,110,Lot D Overflow,5,Pending"
+      },
+      {
+        "title": "Verify costs and rule flags",
+        "text": "Check costs: $96, $360, $64, $160, $480, $880. Confirm REQ-102 and REQ-105 violate Rule EV-01 (>40 guests not in Lot D Overflow), and REQ-106 violates Rule EV-02 (5 buses > 4-bus North Bus Apron limit).",
+        "help": "Every single exception should cite its Rule ID."
+      },
+      {
+        "title": "Draft coordinator action notes",
+        "text": "Ask: 'Write a 2-sentence note to Admissions explaining how to stage their 5 charter buses under Rule EV-02.'",
+        "help": "Should suggest staggering arrivals so no more than 4 buses stage at once."
+      }
+    ],
+    "check": [
+      "Computes all 6 QR pass totals accurately ($96 to $880) [Rule VP-02].",
+      "Flags REQ-102/105 under [Rule EV-01] and REQ-106's 5 buses under [Rule EV-02]."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Knowledge sources in Agent Builder",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-knowledge"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-12",
+    "title": "Level 3 Lab: Fleet, Gate Arm & ADA Lift Maintenance Log Analyst",
+    "summary": "Analyze Fleet-Maintenance-Log.csv to separate open repairs from closed ones and flag repeat equipment or ADA wheelchair lift failures.",
+    "level": "Intermediate",
+    "requires": "Agent Builder + Parking-Transit-Handbook.txt + Fleet-Maintenance-Log.csv.",
+    "features": "Detects blank ResolvedDate cells as OPEN tickets and spots repeat AssetIDs (GA-02N and BUS-12).",
+    "roles": [
+      "Track open gate arm, pay station, EV charger, and shuttle repairs.",
+      "Catch repeat failures on the same gate arm or bus.",
+      "Flag ADA wheelchair lift tickets for 20-minute backup van compliance."
+    ],
+    "prompt": "You are the Fleet & Facility Maintenance Analyst. Read the CSV rows: blank ResolvedDate = OPEN; populated ResolvedDate = CLOSED. Output: (1) Open vs. Closed counts, (2) Table of OPEN tickets, (3) Repeat Asset Alert for any AssetID appearing >1 time, and (4) ADA Priority Alert citing [Rule SH-03] if any open ticket mentions wheelchair lift.",
+    "steps": [
+      {
+        "title": "Configure the Maintenance Analyst",
+        "text": "Attach Parking-Transit-Handbook.txt in Knowledge and paste the Instructions.",
+        "help": "Combining maintenance logs with Rule SH-03 highlights ADA urgency automatically."
+      },
+      {
+        "title": "Paste Fleet-Maintenance-Log.csv",
+        "text": "Send the 6 maintenance tickets in Preview.",
+        "help": "Look for T-502, T-504, and T-506 (open) and repeat AssetIDs GA-02N and BUS-12.",
+        "code": "TicketID,AssetType,AssetID,Location,ReportedDate,ResolvedDate,Notes\nT-501,Gate Arm,GA-02N,Garage 2 North,2026-11-18,2026-11-18,\"Sensor cleaned, arm cycled 5 times\"\nT-502,Pay Station,PS-04W,Lot B West,2026-11-19,,\"Card reader screen frozen, awaiting parts\"\nT-503,Shuttle Bus,BUS-12,Route Loop A,2026-11-20,2026-11-21,\"Replaced ADA wheelchair lift hydraulic seal\"\nT-504,Gate Arm,GA-02N,Garage 2 North,2026-11-22,,\"Repeat jam on entry lane 2\"\nT-505,EV Charger,EV-09,Garage 1 Level 2,2026-11-22,2026-11-23,\"Reset breaker and tested J1772 plug\"\nT-506,Shuttle Bus,BUS-12,Route Loop A,2026-11-24,,\"Check-engine light and slow lift deployment\""
+      },
+      {
+        "title": "Check all four outputs",
+        "text": "Verify 3 OPEN (T-502, T-504, T-506), 3 CLOSED (T-501, T-503, T-505), Repeat Asset Alerts on GA-02N and BUS-12, and ADA Priority Alert on T-506 citing [Rule SH-03].",
+        "help": "BUS-12 had a lift repair on Nov 20 and slow lift deployment again on Nov 24!"
+      },
+      {
+        "title": "Test closing T-506",
+        "text": "Tell the agent: 'Close T-506 on 2026-11-25 and re-run.' Confirm Open drops to 2 and the open ADA alert clears.",
+        "help": "Proves live state tracking in chat."
+      }
+    ],
+    "check": [
+      "Reports 3 Open / 3 Closed and flags repeat AssetIDs GA-02N and BUS-12.",
+      "Triggers ADA Priority Alert on T-506 with [Rule SH-03]."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Write effective instructions for declarative agents",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-instructions"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-13",
+    "title": "Level 3 Lab: Citation Appeals Batch Screener (Rules AP-01 to AP-04)",
+    "summary": "Screen Citation-Appeals-Queue.csv to separate valid 14-day warnings from late appeals, fire-lane tows, and scofflaw boot holds.",
+    "level": "Intermediate",
+    "requires": "Agent Builder + Parking-Transit-Handbook.txt + Citation-Appeals-Queue.csv.",
+    "features": "Computes exact days between CitationDate and AppealDate and checks PriorUnpaid counts.",
+    "roles": [
+      "Pre-screen daily citation appeal queues for appeals officers.",
+      "Flag scofflaw plates with 3+ unpaid citations >30 days old.",
+      "Enforce zero-tolerance fire-lane rules consistently."
+    ],
+    "prompt": "You are the Citation Appeals Screener. Using Parking-Transit-Handbook.txt, evaluate each row: (1) Calculate DaysToAppeal = AppealDate - CitationDate, (2) Check 14-day deadline [Rule AP-01], (3) Check Fire Lane/ADA immediate tow [Rule AP-04], (4) Check 3+ PriorUnpaid boot eligibility [Rule AP-04], and (5) Recommend: Warning Eligible [AP-02], Uphold-Late [AP-01], Uphold-Safety [AP-04], or Boot Hold + Review.",
+    "steps": [
+      {
+        "title": "Configure the Appeals Screener",
+        "text": "Attach Parking-Transit-Handbook.txt and paste the Instructions.",
+        "help": "Date subtraction + rule lookup saves appeals officers hours every week."
+      },
+      {
+        "title": "Paste Citation-Appeals-Queue.csv",
+        "text": "Send the 4 sample appeal rows in Preview.",
+        "help": "Check APP-301 (8 days, upside-down permit), APP-302 (Fire Lane), APP-303 (24 days late + 3 prior unpaid), APP-304 (9 days, overtime).",
+        "code": "AppealID,PlateState,CitationCode,CitationDate,AppealDate,PriorUnpaid,DriverNote\nAPP-301,TX-8821,No Permit Displayed,2026-11-12,2026-11-20,0,\"First visit, hangtag slipped onto dashboard upside down\"\nAPP-302,TX-4410,Fire Lane Obstruction,2026-11-21,2026-11-22,0,\"Only stopped 3 minutes to drop off boxes\"\nAPP-303,OK-1904,Expired Meter,2026-10-25,2026-11-18,3,\"Forgot to extend session in app\"\nAPP-304,TX-7732,Overtime Zone,2026-11-15,2026-11-24,1,\"Meeting ran late, paid for 2 hours\""
+      },
+      {
+        "title": "Verify each screening verdict",
+        "text": "Confirm: APP-301 = 8 days, Warning Eligible [Rule AP-02]; APP-302 = 1 day, Uphold-Safety (Fire Lane zero warning) [Rule AP-04]; APP-303 = 24 days, Uphold-Late [Rule AP-01] + Boot Eligible (3 unpaid) [Rule AP-04]; APP-304 = 9 days, Timely but not a first-time permit display mistake (Uphold/Standard Review).",
+        "help": "Check every day count by hand."
+      },
+      {
+        "title": "Test an amended appeal date",
+        "text": "Ask: 'What if APP-301 was appealed on 2026-11-28?' Verify 16 days > 14 days switches it to Uphold-Late [Rule AP-01].",
+        "help": "Boundary tests verify date math."
+      }
+    ],
+    "check": [
+      "Accurately screens APP-301 (Warning), APP-302 (Fire Lane), APP-303 (Late + Boot), and APP-304 (Timely).",
+      "Switches APP-301 to Uphold-Late when days exceed 14."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Knowledge sources in Agent Builder",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-knowledge"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-14",
+    "title": "Level 3 Lab: Daily Commuter & Event Briefing Generator",
+    "summary": "Combine Garage-Occupancy-Snapshot.csv and Event-Permits-Sample.csv into a one-page morning briefing for booth and patrol supervisors.",
+    "level": "Intermediate",
+    "requires": "Agent Builder + Parking-Transit-Handbook.txt + both CSV files.",
+    "features": "Synthesizes capacity, upcoming events, and staffing priorities into a scannable morning huddle sheet.",
+    "roles": [
+      "Prepare 6:00 a.m. supervisor huddle briefings.",
+      "Highlight which lots need cones or extra booth attendants.",
+      "Flag high-guest events and charter bus arrivals."
+    ],
+    "prompt": "You are the Morning Operations Briefing Builder. Combine the Occupancy Snapshot and Event Permits into a 1-page briefing with three sections: (1) Immediate Lot Diversions (>=90% full), (2) Upcoming Approved & Pending Events with Guest/Bus counts, and (3) Top 3 Field Action Items citing Parking-Transit-Handbook.txt rules.",
+    "steps": [
+      {
+        "title": "Set up the Briefing Builder",
+        "text": "Attach Parking-Transit-Handbook.txt in Knowledge and paste the Instructions.",
+        "help": "Use bullet points so supervisors can read it on a tablet in 60 seconds."
+      },
+      {
+        "title": "Paste both CSV datasets",
+        "text": "Paste Garage-Occupancy-Snapshot.csv followed by Event-Permits-Sample.csv in Preview.",
+        "help": "Tests multi-table synthesis.",
+        "code": "Use Garage-Occupancy-Snapshot.csv + Event-Permits-Sample.csv from your Practice Kit."
+      },
+      {
+        "title": "Review the 3 briefing sections",
+        "text": "Confirm Section 1 flags Garage 1 (99.1%) and Lot B (92.2%), Section 2 summarizes the 6 events (total 255 guests, 8 buses), and Section 3 calls for Lot D Overflow prep [Rule EV-01] and North Bus Apron staging [Rule EV-02].",
+        "help": "Check that 12+45+8+20+60+110 = 255 guests."
+      },
+      {
+        "title": "Add a weather/construction note",
+        "text": "Reply: 'Add note: Lot D Overflow North Gate closed until 9 a.m.' Confirm it updates Section 3.",
+        "help": "Shows how supervisors customize briefings on the fly."
+      }
+    ],
+    "check": [
+      "Combines occupancy alerts with 255 total event guests and 8 charter buses.",
+      "Cites Rules EV-01 and EV-02 in field action items."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Build agents with Agent Builder",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-build"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-15",
+    "title": "Level 3 Lab: Two-Lock Buddy Pilot With Booth & Dispatch Staff",
+    "summary": "Run a live 2-person sharing test with one booth attendant and one dispatcher to verify SharePoint permissions and starter prompts.",
+    "level": "Intermediate",
+    "requires": "A saved agent in Agent Builder + shared SharePoint folder + 2 teammates.",
+    "features": "Validates both Lock 1 (Agent Share Link) and Lock 2 (SharePoint Folder Access) before department launch.",
+    "roles": [
+      "Share a Parking & Transit agent with specific staff.",
+      "Verify booth and dispatch accounts can read the linked SharePoint files.",
+      "Tune starter prompts based on real staff questions."
+    ],
+    "prompt": "Verify your agent has: (1) Clear Parking & Transit title, (2) 3 clickable Starter Prompts, (3) Knowledge linked to your shared SharePoint Parking-Approved-SOPs folder, and (4) Sharing enabled for your 2 pilot teammates.",
+    "steps": [
+      {
+        "title": "Verify Lock 1: SharePoint Folder Access",
+        "text": "Open Parking-Approved-SOPs in SharePoint -> Manage Access and confirm both pilot teammates have 'Can view' permission.",
+        "help": "Never link files from your private OneDrive folder for a team agent."
+      },
+      {
+        "title": "Verify Lock 2: Share the Agent Link",
+        "text": "In Agent Builder, click Create/Update, then Share -> Specific people -> add your 2 pilot teammates and copy the link.",
+        "help": "Send them the sample test message below.",
+        "code": "Hi! Can you test our new Parking & Transit Rule Helper? Click this link and ask: 'Can a department event with 50 guests use Lot B?' Check that it cites Rule EV-01."
+      },
+      {
+        "title": "Collect pilot feedback",
+        "text": "Ask both teammates if the answer loaded cleanly and whether any local lot nicknames were misunderstood.",
+        "help": "Add any missing nicknames to Instructions."
+      },
+      {
+        "title": "Publish updated version",
+        "text": "Click Update in Agent Builder so your nickname improvements go live for everyone.",
+        "help": "Now you are ready to pin the agent in your Operations Teams channel!"
+      }
+    ],
+    "check": [
+      "Both pilot teammates open the agent and get cited answers without permission errors.",
+      "Local lot nicknames are added to Instructions."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Share and manage agents in Agent Builder",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-share"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-16",
+    "title": "Level 3 Lab: Lost & Found and Permit Replacement Desk Helper",
+    "summary": "Build a front-counter helper that guides staff through lost permit replacements ($15 + signed form) and logs found items cleanly.",
+    "level": "Intermediate",
+    "requires": "Agent Builder + Parking-Transit-Handbook.txt.",
+    "features": "Combines Rule AP-03 fee lookup with a structured lost-and-found intake checklist.",
+    "roles": [
+      "Process lost hangtag/permit replacements accurately at the counter.",
+      "Log found keys, wallets, or permits on shuttles with route and bus numbers.",
+      "Prevent replacement permits from being issued without a signed loss declaration form."
+    ],
+    "prompt": "You are the Counter Lost & Found and Permit Replacement Helper. (1) For lost permits, quote [Rule AP-03] ($15 replacement fee + signed loss declaration form required before issuing). (2) For items found on shuttles or lots, collect: Item Description, Bus/Lot Number, Time Found, and Finder Name, and output a numbered Lost & Found tag.",
+    "steps": [
+      {
+        "title": "Configure the Counter Helper",
+        "text": "Attach Parking-Transit-Handbook.txt, set Web search OFF, and paste the Instructions.",
+        "help": "Add starter prompts for 'Lost permit replacement rules' and 'Log a found item.'"
+      },
+      {
+        "title": "Test a lost permit question",
+        "text": "Ask: 'A commuter lost their hangtag\u2014can we print a free replacement right now?'",
+        "help": "Should say No: requires $15 fee and signed loss declaration form [Rule AP-03]."
+      },
+      {
+        "title": "Test logging a found item",
+        "text": "Send the sample found-item note in Preview.",
+        "help": "Verify it formats a clean Lost & Found tag and asks for any missing detail.",
+        "code": "Found blue backpack on Bus 12 at 10:20am by driver Elena."
+      },
+      {
+        "title": "Test missing bus number",
+        "text": "Send: 'Found set of keys in garage.' Verify it asks which garage and level before finalizing the tag.",
+        "help": "Complete tags help riders reclaim items faster."
+      }
+    ],
+    "check": [
+      "Enforces $15 + signed loss declaration form [Rule AP-03].",
+      "Formats complete Lost & Found tags and prompts for missing lot/bus details."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Knowledge sources in Agent Builder",
+        "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite-knowledge"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-17",
+    "title": "Level 4 Lab: Copilot Studio Guided Event Permit Intake",
+    "summary": "Upgrade to Copilot Studio and build a structured Topic that collects Department, Event Date, Guest Vehicles, and Charter Buses in order.",
+    "level": "Advanced",
+    "requires": "Copilot Studio (copilotstudio.microsoft.com).",
+    "features": "Uses Question nodes, numeric validation, and branch conditions for >40 guests and >4 charter buses.",
+    "roles": [
+      "Collect complete event parking requests without missing fields.",
+      "Automatically apply Lot D Overflow (>40 guests) and Bus Apron (<=4 buses) rules.",
+      "Display a confirmation card before saving."
+    ],
+    "prompt": "Build a Copilot Studio Topic triggered by 'Request event parking'. Ask for: (1) Department (Text), (2) Event Date (Date), (3) Guest Vehicles (Number), and (4) Charter Buses (Number). Apply Rule EV-01 (>40 guests -> Lot D Overflow) and Rule EV-02 (>4 buses -> Flag Bus Apron limit), then show a Yes/No confirmation card.",
+    "steps": [
+      {
+        "title": "Create the Topic in Copilot Studio",
+        "text": "Open Copilot Studio -> Topics -> Add a topic -> From blank. Add triggers: 'Request event parking', 'New event permit', 'Book visitor lot'.",
+        "help": "Multiple trigger phrases help staff start the flow naturally."
+      },
+      {
+        "title": "Add 4 Question nodes",
+        "text": "Add Question nodes in order: Department (Text), EventDate (Date), GuestCount (Number), and CharterBuses (Number).",
+        "help": "Using Number type prevents text entries like 'around fifty'."
+      },
+      {
+        "title": "Add Condition logic for Overflow & Buses",
+        "text": "Add a Condition node: if GuestCount > 40, set AssignedLot = 'Lot D Overflow [Rule EV-01]'; else 'Garage 2 or Lot B [Rule VP-01]'. If CharterBuses > 4, append 'WARNING: Exceeds 4-bus North Apron limit [Rule EV-02]'.",
+        "help": "Automates rule checks before any human reviews the form."
+      },
+      {
+        "title": "Add Confirmation Question and test",
+        "text": "Show a summary with Cost = GuestCount * 8 [Rule VP-02] and ask 'Confirm and submit?'. Test in the Test pane with 65 guests and 5 buses.",
+        "help": "Verify Lot D Overflow, $520 cost, and the 4-bus warning all appear.",
+        "code": "Test input: Dept = Marketing, Date = 2026-12-18, Guests = 65, Buses = 5 -> Expected: Lot D Overflow, $520, Bus Apron warning."
+      }
+    ],
+    "check": [
+      "Collects all 4 fields in order and computes $520 (65 x $8) [Rule VP-02].",
+      "Assigns Lot D Overflow [Rule EV-01] and flags 5 buses [Rule EV-02] on the preview card."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Author topics and question nodes in Copilot Studio",
+        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-create-edit-topics"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-18",
+    "title": "Level 4 Lab: Log Confirmed Event Permits to Excel Online",
+    "summary": "Wire the 'Yes' confirmation branch from Lab 17 to append a new row into an approved Event-Permits-Tracker.xlsx table.",
+    "level": "Advanced",
+    "requires": "Copilot Studio Topic from Lab 17 + Excel Online workbook with a named Table.",
+    "features": "Turns confirmed chat intake into structured spreadsheet rows with zero manual re-typing.",
+    "roles": [
+      "Append approved event requests directly to your department Excel tracker.",
+      "Keep user confirmation enabled so no accidental test rows pollute live sheets.",
+      "Return a confirmation receipt to the requester."
+    ],
+    "prompt": "On the 'Confirm = Yes' branch of your Event Permit Topic, invoke Excel Online (Business) -> 'Add a row into a table', map Department, EventDate, GuestCount, CharterBuses, AssignedLot, and Status='Pending Review', and display a receipt message.",
+    "steps": [
+      {
+        "title": "Create Event-Permits-Tracker.xlsx",
+        "text": "In SharePoint, create Event-Permits-Tracker.xlsx with an official Excel Table (Ctrl+T) having columns: Department, EventDate, GuestCount, CharterBuses, AssignedLot, Status.",
+        "help": "Copilot Studio requires a formatted Excel Table, not plain cells."
+      },
+      {
+        "title": "Add the Excel Online Action",
+        "text": "In your Topic's 'Yes' branch, click + -> Add an action -> Excel Online (Business) -> Add a row into a table. Map all 5 variables and set Status = 'Pending Review'.",
+        "help": "Leave 'No' branch wired to 'Request canceled\u2014no row saved.'"
+      },
+      {
+        "title": "Keep user confirmation active",
+        "text": "Verify the action asks for confirmation before executing.",
+        "help": "Double safety against stray test clicks."
+      },
+      {
+        "title": "Test end-to-end and open Excel",
+        "text": "Run a request in the Test pane, click Confirm, and open Event-Permits-Tracker.xlsx to verify the new row.",
+        "help": "Close the Excel file in your browser if it shows a file lock.",
+        "code": "Test: Dept = Nursing, Date = 2026-12-20, Guests = 30, Buses = 1 -> Row added with Status 'Pending Review'."
+      }
+    ],
+    "check": [
+      "Confirming appends 1 clean row to Event-Permits-Tracker.xlsx.",
+      "Canceling writes zero rows."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Add actions and connectors in Copilot Studio",
+        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-plugin-actions"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-19",
+    "title": "Level 4 Lab: Guided ADA & Shuttle Incident Dispatch Intake",
+    "summary": "Build a fast Copilot Studio intake flow for shuttle drivers or booth staff reporting wheelchair lift outages or broken gate arms.",
+    "level": "Advanced",
+    "requires": "Copilot Studio + SharePoint List or Excel Maintenance Tracker.",
+    "features": "Collects Asset ID, Location, and ADA Impact, flags the 20-minute ADA backup SLA [Rule SH-03], and logs the ticket.",
+    "roles": [
+      "Log broken shuttle wheelchair lifts and gate arms in 30 seconds.",
+      "Flag ADA lift outages as URGENT per Rule SH-03.",
+      "Write structured work orders to the Fleet Maintenance tracker."
+    ],
+    "prompt": "Create a Copilot Studio Topic triggered by 'Report shuttle or gate issue'. Ask: (1) Asset Type (Shuttle Bus, Gate Arm, Pay Station, EV Charger), (2) Asset ID (e.g., BUS-12), (3) Location/Route, and (4) Is an ADA wheelchair lift affected? (Yes/No). If ADA = Yes, mark Priority = 'URGENT - 20-Min ADA Backup Van Required [Rule SH-03]'. Preview and log to tracker.",
+    "steps": [
+      {
+        "title": "Build the Incident Intake Topic",
+        "text": "In Copilot Studio, create Topic 'Report Field Incident' with Multiple Choice for Asset Type and Yes/No for ADA Lift Impact.",
+        "help": "Multiple choice buttons make mobile/tablet entry fast for field staff."
+      },
+      {
+        "title": "Set Urgent ADA Priority rule",
+        "text": "Add a Condition: if ADA_Impact = Yes, set Priority = 'URGENT (20-min ADA backup van SLA) [Rule SH-03]'; else Priority = 'Standard'.",
+        "help": "Ensures ADA compliance is never buried in free-text notes."
+      },
+      {
+        "title": "Preview card + Log action",
+        "text": "Show the summary card with Priority and wire Confirm = Yes to log the ticket into your Maintenance Tracker table.",
+        "help": "Include a ticket timestamp."
+      },
+      {
+        "title": "Test with BUS-14 wheelchair lift outage",
+        "text": "Run the flow for Shuttle Bus BUS-14 on Route Loop A with ADA Lift = Yes. Confirm URGENT [Rule SH-03] appears on the preview card and in the tracker.",
+        "help": "Test again with a standard pay station paper jam (ADA = No) to confirm Standard priority.",
+        "code": "Test: Asset = Shuttle Bus, ID = BUS-14, Route = Loop A, ADA = Yes -> Priority: URGENT [Rule SH-03]."
+      }
+    ],
+    "check": [
+      "Sets URGENT + 20-min ADA SLA [Rule SH-03] when ADA = Yes.",
+      "Logs verified ticket row after human confirmation."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Author topics and question nodes in Copilot Studio",
+        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-create-edit-topics"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-20",
+    "title": "Level 4 Lab: Overnight Safety Variance Request Pre-Checker",
+    "summary": "Build a guided checker that verifies whether an overnight parking request meets the 48-hour advance notice rule [Rule VP-03] before logging.",
+    "level": "Advanced",
+    "requires": "Copilot Studio.",
+    "features": "Compares requested overnight start time against current time to enforce the 48-hour safety variance rule.",
+    "roles": [
+      "Screen overnight visitor or contractor vehicle requests.",
+      "Enforce the 48-hour advance written safety variance rule [Rule VP-03].",
+      "Route valid requests to Parking Enforcement for sign-off."
+    ],
+    "prompt": "Create a Topic triggered by 'Overnight parking variance'. Ask: (1) Vehicle Plate & State, (2) Facility (Garage 2 or Lot B), (3) Overnight Start Date/Time, and (4) Reason/Sponsoring Dept. Check if Start Date/Time is at least 48 hours from now [Rule VP-03]. If <48 hours, warn 'Late Request\u2014requires immediate Supervisor Exception'; if >=48 hours, mark 'Eligible for 48-hr Safety Variance Review' and preview for confirmation.",
+    "steps": [
+      {
+        "title": "Create the Overnight Variance Topic",
+        "text": "Add Question nodes for Plate, Facility, Start DateTime, and Sponsoring Dept.",
+        "help": "Keep clear labels so booth staff can enter requests for contractors or visiting teams."
+      },
+      {
+        "title": "Add the 48-hour check",
+        "text": "Use a Condition comparing Start DateTime against utcNow() + 48 hours to label Eligible vs. Late Exception [Rule VP-03].",
+        "help": "Prevents last-minute overnight requests from slipping through unreviewed."
+      },
+      {
+        "title": "Show confirmation summary",
+        "text": "Display Plate, Facility, Start Time, and Variance Status before logging or drafting the Enforcement approval email.",
+        "help": "Human enforcement officer still grants final written variance."
+      },
+      {
+        "title": "Test both 12 hours ahead and 72 hours ahead",
+        "text": "Verify 12 hours ahead triggers the Late Request warning while 72 hours ahead marks Eligible [Rule VP-03].",
+        "help": "Boundary testing proves the 48-hour rule works."
+      }
+    ],
+    "check": [
+      "Flags requests <48 hours out as Late Exception [Rule VP-03].",
+      "Marks requests >=48 hours out as Eligible for Safety Variance Review."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Author topics and question nodes in Copilot Studio",
+        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-create-edit-topics"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-21",
+    "title": "Level 5 Lab: Autonomous Teams Alert for >40-Guest Overflow Events",
+    "summary": "Set up an event trigger in Copilot Studio that monitors your Event Permits tracker and alerts the Operations Lead Teams channel whenever Guests > 40.",
+    "level": "Expert",
+    "requires": "Copilot Studio + SharePoint List / Excel tracker + private Teams test channel.",
+    "features": "Background event trigger filters for large events (>40 vehicles) so supervisors get proactive overflow alerts.",
+    "roles": [
+      "Alert field supervisors automatically when large events require Lot D Overflow [Rule EV-01].",
+      "Avoid alert fatigue by keeping <=40-guest events silent.",
+      "Include direct rule citations in the Teams alert card."
+    ],
+    "prompt": "Configure an autonomous trigger on the Event Permits tracker ('When an item/row is created'). If Guests > 40, check Parking-Transit-Handbook.txt [Rule EV-01, Rule VP-02] and post a formatted summary alert to the private Operations-Test Teams channel.",
+    "steps": [
+      {
+        "title": "Add the Event Trigger",
+        "text": "In Copilot Studio -> Overview -> Triggers -> Add trigger -> 'When a row is added' (Excel) or 'When an item is created' (SharePoint).",
+        "help": "Point it at your test Event Permits tracker."
+      },
+      {
+        "title": "Set the >40 guest threshold",
+        "text": "Instruct the trigger: 'Only post a Teams alert when GuestCount > 40. For 40 or fewer guests, take no notification action.'",
+        "help": "Keeps channel noise low."
+      },
+      {
+        "title": "Connect Teams post action to a test channel",
+        "text": "Add 'Post message in a chat or channel' targeting a private Operations-Test channel.",
+        "help": "Include Department, EventDate, GuestCount, CharterBuses, and Rule EV-01 Lot D Overflow reminder."
+      },
+      {
+        "title": "Test with a 20-guest row vs. a 75-guest row",
+        "text": "Add a 20-guest row (verify silent) and a 75-guest row (verify Teams alert posts cleanly). Inspect Copilot Studio Activity logs.",
+        "help": "Activity logs show every trigger run and decision.",
+        "code": "Row 1: 20 guests -> Silent | Row 2: 75 guests -> Teams alert posted citing [Rule EV-01]."
+      }
+    ],
+    "check": [
+      "20-guest row executes silently with zero Teams posts.",
+      "75-guest row posts an overflow alert citing [Rule EV-01] to the test channel."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Add event triggers to autonomous agents",
+        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-22",
+    "title": "Level 5 Lab: Autonomous ADA Lift & Repeat-Fault Dispatch Alert",
+    "summary": "Build an event-triggered workflow on the Maintenance Tracker that alerts Dispatch immediately when an ADA lift fails or an AssetID repeats.",
+    "level": "Expert",
+    "requires": "Copilot Studio + Maintenance Tracker + private Dispatch-Test Teams channel.",
+    "features": "Monitors incoming repair rows and escalates ADA wheelchair lift failures [Rule SH-03] within seconds.",
+    "roles": [
+      "Guarantee the 20-minute ADA backup van SLA [Rule SH-03] is never missed.",
+      "Alert maintenance leads when the same gate arm or bus breaks twice in 7 days.",
+      "Keep routine bulb/sign repairs silent."
+    ],
+    "prompt": "On new Maintenance Tracker rows, check if Notes/AssetType involves 'wheelchair lift' or 'ADA' OR if AssetID already has a prior ticket in the last 7 days. If true, post an URGENT Dispatch Alert to the private Dispatch-Test Teams channel citing [Rule SH-03] where applicable.",
+    "steps": [
+      {
+        "title": "Configure the Maintenance Trigger",
+        "text": "Attach 'When a row is added / item is created' to your Maintenance Tracker in Copilot Studio.",
+        "help": "Works alongside Lab 19's intake agent."
+      },
+      {
+        "title": "Define ADA and Repeat-Fault rules",
+        "text": "Set instructions to escalate any row mentioning 'ADA' or 'wheelchair lift' with a bold reminder: 'Dispatch ADA backup van within 20 minutes [Rule SH-03].'",
+        "help": "Also flag repeat AssetIDs like GA-02N."
+      },
+      {
+        "title": "Wire Teams alert to Dispatch-Test",
+        "text": "Add the Teams post action to your private Dispatch-Test channel.",
+        "help": "Never test autonomous triggers in live public channels."
+      },
+      {
+        "title": "Test routine vs. ADA outage rows",
+        "text": "Add a routine 'Lighting' ticket (silent) and a 'Shuttle Bus BUS-15 wheelchair lift stuck' ticket (posts urgent alert citing [Rule SH-03]).",
+        "help": "Inspect the Copilot Studio Activity trace.",
+        "code": "Test row: AssetID = BUS-15, Notes = 'Wheelchair lift stuck at Stop 2' -> Urgent Teams alert citing [Rule SH-03]."
+      }
+    ],
+    "check": [
+      "Routine lighting ticket logs quietly.",
+      "BUS-15 wheelchair lift ticket triggers an urgent Teams alert citing [Rule SH-03]."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Add event triggers to autonomous agents",
+        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-23",
+    "title": "Level 5 Lab: Scofflaw Boot & Fire-Lane Escalation Router",
+    "summary": "Create a specialized enforcement assistant that cross-checks incoming plate lookups against Rules AP-01 to AP-04 and prepares supervisor review packets.",
+    "level": "Expert",
+    "requires": "Copilot Studio + Parking-Transit-Handbook.txt + Citation-Appeals-Queue.csv.",
+    "features": "Separates automated rule lookups from human-approved boot/tow authorization.",
+    "roles": [
+      "Prepare complete evidence summaries before a supervisor authorizes a vehicle boot.",
+      "Verify 3+ unpaid citations >30 days old [Rule AP-04].",
+      "Keep humans strictly in charge of physical boot or tow orders."
+    ],
+    "prompt": "You are the Enforcement Review Packet Builder. Check the plate's citation history against Parking-Transit-Handbook.txt. Never order a boot or tow yourself. Instead, output a Supervisor Verification Packet showing: (1) Count of unpaid citations >30 days old, (2) Whether Fire Lane/ADA immediate tow applies [Rule AP-04], and (3) A Yes/No Supervisor Authorization prompt.",
+    "steps": [
+      {
+        "title": "Build the Enforcement Packet Agent",
+        "text": "In Copilot Studio, attach Parking-Transit-Handbook.txt and paste the safety-first Instructions.",
+        "help": "Enforces human sign-off on all physical enforcement actions."
+      },
+      {
+        "title": "Test with a 3-ticket scofflaw plate",
+        "text": "Send the sample plate record in Test chat.",
+        "help": "Plate OK-1904 has 3 unpaid tickets older than 30 days.",
+        "code": "Plate OK-1904: 3 unpaid citations (42 days, 38 days, 33 days old). Parked in Lot B."
+      },
+      {
+        "title": "Verify the Supervisor Packet",
+        "text": "Confirm it cites [Rule AP-04] (3+ unpaid citations >30 days eligible for boot) and stops at a Supervisor Authorization prompt without taking autonomous action.",
+        "help": "Keeps human oversight airtight."
+      },
+      {
+        "title": "Test a 2-ticket plate",
+        "text": "Test a plate with only 2 unpaid tickets >30 days old. Confirm it reports 'Not eligible for boot (requires 3+ unpaid tickets >30 days) [Rule AP-04].'",
+        "help": "Exact threshold verification."
+      }
+    ],
+    "check": [
+      "Prepares Supervisor Verification Packet citing [Rule AP-04] for 3+ unpaid tickets >30 days.",
+      "Refuses boot eligibility when unpaid count is 2."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Add actions and connectors in Copilot Studio",
+        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-plugin-actions"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "lab-agents-24",
+    "title": "Level 5 Capstone: Multi-Agent Parking & Transit Operations Hub",
+    "summary": "Connect a parent 'Parking & Transit Front Desk' router to your three specialists: Rulebook & Appeals, Fleet & Gate Analyst, and Event Permit Intake.",
+    "level": "Expert",
+    "requires": "Copilot Studio + your specialist agents from Labs 5/7, 12, and 17.",
+    "features": "Gives booth staff, dispatchers, and event coordinators one single front door backed by focused specialist agents.",
+    "roles": [
+      "Answer complex multi-part questions spanning rules, fleet status, and event permits.",
+      "Keep each specialist agent small, modular, and easy to maintain.",
+      "Verify multi-agent routing in Copilot Studio's Activity map."
+    ],
+    "prompt": "You are the Parking & Transit Operations Front Desk Router. Delegate questions to your three specialists: (1) Rulebook & Appeals Advisor for permits, shuttles, appeals, and tow rules; (2) Fleet & Gate Maintenance Analyst for open repair tickets and ADA lift status; and (3) Event Permit Intake Specialist for logging new event & bus requests. Combine their responses clearly with Rule IDs.",
+    "steps": [
+      {
+        "title": "Create the parent Front Desk Router",
+        "text": "In Copilot Studio, create a new agent named Parking & Transit Front Desk and paste the router Instructions.",
+        "help": "Give the parent agent a clear overview of all three domains."
+      },
+      {
+        "title": "Attach all 3 specialist agents",
+        "text": "Open Agents -> Add Agent inside the parent router and connect: (1) Rulebook & Appeals Advisor, (2) Fleet & Gate Maintenance Analyst, and (3) Event Permit Intake Specialist.",
+        "help": "Ensure each child agent has a distinct, non-overlapping description."
+      },
+      {
+        "title": "Test a 3-part operational question",
+        "text": "Send the combined scenario in the Test pane and watch the Activity map route across specialists.",
+        "help": "Combines Rule EV-01, BUS-12 maintenance status, and Rule SH-03.",
+        "code": "We have an event next Friday with 55 guest cars\u2014which lot is required, is Bus 12's wheelchair lift currently operational, and what is our backup van SLA if a lift fails?"
+      },
+      {
+        "title": "Verify the unified answer",
+        "text": "Confirm the unified response states: (1) Lot D Overflow required for >40 vehicles [Rule EV-01], (2) Bus 12 has open Ticket T-506 for slow lift deployment, and (3) Dispatch must send an ADA backup van within 20 minutes [Rule SH-03].",
+        "help": "Congratulations\u2014you built a complete end-to-end Parking & Transportation multi-agent system!"
+      }
+    ],
+    "check": [
+      "Routes seamlessly across Rulebook and Fleet specialists in the Activity map.",
+      "Delivers one unified answer citing [Rule EV-01], Ticket T-506, and [Rule SH-03]."
+    ],
+    "sources": [
+      [
+        "Microsoft \u00b7 Orchestrate multiple agents in Copilot Studio",
+        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-orchestrate-agents"
+      ]
+    ],
+    "basis": [
+      "ai-drafted",
+      "source-read"
+    ],
+    "lastVerified": "2026-11-25"
+  }
+]

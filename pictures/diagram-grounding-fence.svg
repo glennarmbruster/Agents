@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" role="img" aria-labelledby="t5 d5">
+          <title id="t5">How Grounding Keeps Answers Honest</title>
+          <desc id="d5">A teammate asks a question, the agent checks inside the Approved Knowledge Fence first, and returns an answer with a clickable citation badge.</desc>
+          <rect x="2" y="2" width="756" height="216" rx="12" fill="#faf6ea" stroke="#c1bcab" stroke-width="2"/>
+
+          <rect x="24" y="64" width="165" height="92" rx="8" fill="#fffdf6" stroke="#182c2d" stroke-width="2"/>
+          <text x="106" y="98" text-anchor="middle" fill="#8b571b" font-family="system-ui,sans-serif" font-size="11" font-weight="700">TEAMMATE ASKS</text>
+          <text x="106" y="122" text-anchor="middle" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">"Can visitors park</text>
+          <text x="106" y="140" text-anchor="middle" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">overnight?"</text>
+
+          <path d="M192 110 H226" stroke="#145756" stroke-width="3"/>
+          <polygon points="224,103 236,110 224,117" fill="#145756"/>
+
+          <rect x="240" y="26" width="266" height="168" rx="10" fill="#edf1e7" stroke="#145756" stroke-width="2.5" stroke-dasharray="6 4"/>
+          <text x="373" y="52" text-anchor="middle" fill="#145756" font-family="system-ui,sans-serif" font-size="12" font-weight="700">APPROVED KNOWLEDGE FENCE</text>
+          <rect x="260" y="66" width="226" height="44" rx="5" fill="#fffdf6" stroke="#145756" stroke-width="1.5"/>
+          <text x="373" y="93" text-anchor="middle" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Visitor-Parking-Rules.txt (Rule VP-03)</text>
+          <text x="373" y="136" text-anchor="middle" fill="#182c2d" font-family="system-ui,sans-serif" font-size="12.5">Web search OFF = No guessing</text>
+          <text x="373" y="156" text-anchor="middle" fill="#182c2d" font-family="system-ui,sans-serif" font-size="12.5">Missing topic = Says "Not covered"</text>
+          <text x="373" y="176" text-anchor="middle" fill="#8b571b" font-family="system-ui,sans-serif" font-size="11.5" font-weight="600">Respects each user's M365 permissions</text>
+
+          <path d="M510 110 H544" stroke="#145756" stroke-width="3"/>
+          <polygon points="542,103 554,110 542,117" fill="#145756"/>
+
+          <rect x="558" y="52" width="178" height="116" rx="8" fill="#145756"/>
+          <text x="647" y="80" text-anchor="middle" fill="#f2dfc4" font-family="system-ui,sans-serif" font-size="11" font-weight="700">VERIFIED ANSWER</text>
+          <text x="647" y="104" text-anchor="middle" fill="#ffffff" font-family="system-ui,sans-serif" font-size="13">"No, unless approved</text>
+          <text x="647" y="122" text-anchor="middle" fill="#ffffff" font-family="system-ui,sans-serif" font-size="13">48 hrs in advance."</text>
+          <text x="647" y="148" text-anchor="middle" fill="#f2dfc4" font-family="system-ui,sans-serif" font-size="12" font-weight="700">[Source: Rule VP-03]</text>
+        </svg>

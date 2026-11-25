@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 230" role="img" aria-labelledby="t6 d6">
+          <title id="t6">How Team Sharing and File Permissions Work</title>
+          <desc id="d6">Two locks protect shared agents: Lock 1 is the Agent Share Link (who can open the helper) and Lock 2 is SharePoint File Permissions (which files the helper can read for that person).</desc>
+          <rect x="2" y="2" width="756" height="226" rx="12" fill="#faf6ea" stroke="#c1bcab" stroke-width="2"/>
+          <text x="24" y="34" fill="#145756" font-family="Georgia,serif" font-size="21">Two Locks Keep Shared Team Agents Safe</text>
+
+          <rect x="24" y="54" width="340" height="152" rx="8" fill="#fffdf6" stroke="#145756" stroke-width="2"/>
+          <text x="42" y="80" fill="#8b571b" font-family="system-ui,sans-serif" font-size="12" font-weight="700">LOCK 1 · WHO CAN OPEN THE AGENT?</text>
+          <text x="42" y="106" fill="#182c2d" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Controlled by your Share button:</text>
+          <text x="42" y="132" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">• Only me (private testing)</text>
+          <text x="42" y="156" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">• Specific people or security group (your team)</text>
+          <text x="42" y="180" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">• Everyone in the organization (approved guides)</text>
+
+          <rect x="396" y="54" width="340" height="152" rx="8" fill="#edf1e7" stroke="#8b571b" stroke-width="2"/>
+          <text x="414" y="80" fill="#8b571b" font-family="system-ui,sans-serif" font-size="12" font-weight="700">LOCK 2 · WHICH FILES CAN IT READ?</text>
+          <text x="414" y="106" fill="#182c2d" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Controlled by SharePoint &amp; OneDrive:</text>
+          <text x="414" y="132" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">• Copilot checks the asker's own permissions</text>
+          <text x="414" y="156" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">• Teammates must have View access to the folder</text>
+          <text x="414" y="180" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">• Private HR/budget files stay hidden automatically</text>
+        </svg>

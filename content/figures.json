@@ -1,0 +1,194 @@
+[
+  {
+    "file": "diagram-chat-vs-agent.svg",
+    "lesson": "what-is-a-copilot-agent",
+    "caption": "Regular Copilot Chat starts blank every shift; a Parking & Transit Agent saves your rules, files, and team sharing link.",
+    "alt": "Comparison between Regular Copilot Chat and a Parking & Transit Agent.",
+    "source": "#what-is-a-copilot-agent",
+    "credit": "All About Copilot Agents \u00b7 Parking & Transit Diagram",
+    "placements": {
+      "what-is-a-copilot-agent": {
+        "field": "sections.0.paragraphs.1",
+        "evidence": "gives every shift the same accurate answer."
+      }
+    }
+  },
+  {
+    "file": "diagram-agent-anatomy.svg",
+    "lesson": "what-is-a-copilot-agent",
+    "caption": "The four building blocks inside every Parking & Transit agent: Name, Instructions, Knowledge, and Actions.",
+    "alt": "Four blocks showing Name & Icon, Instructions, Knowledge, and Actions & Tools.",
+    "source": "#what-is-a-copilot-agent",
+    "credit": "All About Copilot Agents \u00b7 Parking & Transit Diagram",
+    "placements": {
+      "what-is-a-copilot-agent": {
+        "field": "sections.1.paragraphs.0",
+        "evidence": "Every agent is built from four simple pieces"
+      }
+    }
+  },
+  {
+    "file": "diagram-agent-ladder.svg",
+    "lesson": "five-levels-of-agents",
+    "caption": "Climb one rung at a time: start with a 5-minute Shift Formatter before building multi-agent dispatch workflows.",
+    "alt": "Five rising steps from Level 1 Shift Formatter to Level 5 Dispatch Router.",
+    "source": "#five-levels-of-agents",
+    "credit": "All About Copilot Agents \u00b7 Parking & Transit Diagram",
+    "placements": {
+      "five-levels-of-agents": {
+        "field": "sections.0.paragraphs.0",
+        "evidence": "Level 1 \u2014 Shift & Radio Formatter"
+      }
+    }
+  },
+  {
+    "file": "diagram-grounding-fence.svg",
+    "lesson": "grounding-and-honesty",
+    "caption": "Locking your Parking Handbook inside an Approved Knowledge Fence with Web Search OFF prevents guessing on fees or tows.",
+    "alt": "Approved Knowledge Fence diagram showing boot rule lookup citing Rule AP-04.",
+    "source": "#grounding-and-honesty",
+    "credit": "All About Copilot Agents \u00b7 Parking & Transit Diagram",
+    "placements": {
+      "grounding-and-honesty": {
+        "field": "sections.0.paragraphs.0",
+        "evidence": "Always include these three rules"
+      }
+    }
+  },
+  {
+    "file": "diagram-builder-vs-studio.svg",
+    "lesson": "builder-vs-studio",
+    "caption": "Start in Agent Builder for Q&A, CSV audits, and drafts; step up to Copilot Studio for intake forms and Teams alerts.",
+    "alt": "Agent Builder vs. Copilot Studio comparison for Parking & Transit.",
+    "source": "#builder-vs-studio",
+    "credit": "All About Copilot Agents \u00b7 Parking & Transit Diagram",
+    "placements": {
+      "builder-vs-studio": {
+        "field": "sections.0.paragraphs.0",
+        "evidence": "Choose Copilot Studio"
+      }
+    }
+  },
+  {
+    "file": "diagram-action-approval-loop.svg",
+    "lesson": "interactive-intake-and-actions",
+    "caption": "Preview event & bus details on a confirmation card before writing rows to your Excel tracker.",
+    "alt": "Four-step safety flow: Collect, Preview, Confirm, Log.",
+    "source": "#interactive-intake-and-actions",
+    "credit": "All About Copilot Agents \u00b7 Parking & Transit Diagram",
+    "placements": {
+      "interactive-intake-and-actions": {
+        "field": "sections.0.paragraphs.2",
+        "evidence": "Display a Summary Confirmation Card"
+      }
+    }
+  },
+  {
+    "file": "diagram-sharing-permissions.svg",
+    "lesson": "sharing-and-permissions",
+    "caption": "Lock 1 shares the agent link; Lock 2 checks each staff member's SharePoint access to the underlying SOP folder.",
+    "alt": "Two Locks diagram for Parking & Transit team sharing.",
+    "source": "#sharing-and-permissions",
+    "credit": "All About Copilot Agents \u00b7 Parking & Transit Diagram",
+    "placements": {
+      "sharing-and-permissions": {
+        "field": "sections.0.paragraphs.0",
+        "evidence": "Lock 1 is the Agent Link"
+      }
+    }
+  },
+  {
+    "file": "diagram-team-rollout.svg",
+    "lesson": "team-rollout-playbook",
+    "caption": "Test solo, pilot with 1 booth + 1 dispatch teammate, pin in Teams, and refresh detour maps each semester.",
+    "alt": "Four-stage rollout cycle for Parking & Transit teams.",
+    "source": "#team-rollout-playbook",
+    "credit": "All About Copilot Agents \u00b7 Parking & Transit Diagram",
+    "placements": {
+      "team-rollout-playbook": {
+        "field": "sections.0.paragraphs.0",
+        "evidence": "Buddy Pilot"
+      }
+    }
+  },
+  {
+    "file": "diagram-lot-capacity-triage.svg",
+    "lesson": "lab-agents-10",
+    "caption": "Visualizing garage fill thresholds (95% Full-Divert, 85\u201394% Watch) and the >40-vehicle Lot D Overflow rule.",
+    "alt": "Garage occupancy bars and routing thresholds.",
+    "source": "#lab-agents-10",
+    "credit": "All About Copilot Agents \u00b7 Parking & Transit Diagram",
+    "placements": {
+      "lab-agents-10": {
+        "field": "summary",
+        "evidence": "calculates fill percentages"
+      }
+    }
+  },
+  {
+    "file": "diagram-shuttle-ada-dispatch.svg",
+    "lesson": "lab-agents-06",
+    "caption": "Weekday 15-minute headways, Saturday 30-minute headways, no Sunday service, and the 20-minute ADA backup van SLA.",
+    "alt": "Shuttle schedule and 20-minute ADA backup van diagram.",
+    "source": "#lab-agents-06",
+    "credit": "All About Copilot Agents \u00b7 Parking & Transit Diagram",
+    "placements": {
+      "lab-agents-06": {
+        "field": "summary",
+        "evidence": "20-minute ADA backup van rule"
+      }
+    }
+  },
+  {
+    "file": "diagram-citation-appeal-tree.svg",
+    "lesson": "lab-agents-13",
+    "caption": "Four-step appeal screening order: Fire Lane/ADA safety check, 14-day deadline, first-time permit slip, and 3+ unpaid boot hold.",
+    "alt": "Citation appeal decision tree diagram.",
+    "source": "#lab-agents-13",
+    "credit": "All About Copilot Agents \u00b7 Parking & Transit Diagram",
+    "placements": {
+      "lab-agents-13": {
+        "field": "summary",
+        "evidence": "screen Citation-Appeals-Queue.csv"
+      }
+    }
+  },
+  {
+    "file": "diagram-multi-agent-dispatch.svg",
+    "lesson": "lab-agents-24",
+    "caption": "Level 5 Capstone: One Operations Front-Desk Router coordinating three focused specialist agents.",
+    "alt": "Multi-agent routing diagram with parent router and three specialists.",
+    "source": "#lab-agents-24",
+    "credit": "All About Copilot Agents \u00b7 Parking & Transit Diagram",
+    "placements": {
+      "lab-agents-24": {
+        "field": "summary",
+        "evidence": "routes policy questions"
+      }
+    }
+  },
+  {
+    "file": "diagram-agent-history.svg",
+    "lesson": "history-of-copilot-agents",
+    "caption": "Four waves of workplace assistants: from brittle pre-2022 decision trees to 2026 autonomous multi-agent teams.",
+    "alt": "Timeline showing Era 1 Scripted Chatbots, Era 2 General AI Chat, Era 3 Declarative Agents, and Era 4 Autonomous Teams.",
+    "source": "#history-of-copilot-agents",
+    "credit": "All About Copilot Agents \u00b7 Parking & Transit Diagram"
+  },
+  {
+    "file": "diagram-tools-stack.svg",
+    "lesson": "tools-and-setup",
+    "caption": "Zero desktop installs required: build and share agents using your web browser, SharePoint, and Teams.",
+    "alt": "Three-column tool stack showing Core Web Workshops, Standard M365 Suite, and Optional Add-Ons.",
+    "source": "#tools-and-setup",
+    "credit": "All About Copilot Agents \u00b7 Parking & Transit Diagram"
+  },
+  {
+    "file": "diagram-licensing-check.svg",
+    "lesson": "licensing-requirements-2026",
+    "caption": "Compare Included Copilot Chat, M365 Copilot ($21\u2013$30/mo), and Copilot Studio capacity/PAYG\u2014plus self-check URLs.",
+    "alt": "2026 Copilot Agent Licensing and Self-Check Map.",
+    "source": "#licensing-requirements-2026",
+    "credit": "All About Copilot Agents \u00b7 Parking & Transit Diagram"
+  }
+]
