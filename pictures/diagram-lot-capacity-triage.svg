@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" role="img" aria-labelledby="t9 d9">
+      <title id="t9">Garage &amp; Event Overflow Triage Logic</title>
+      <desc id="d9">Visual bar chart and routing threshold showing Garage 1 full, Garage 2 and Lot B normal, and events over 40 vehicles routed to Lot D Overflow.</desc>
+      <rect x="2" y="2" width="756" height="216" rx="12" fill="#faf6ea" stroke="#c1bcab" stroke-width="2"/>
+      <text x="24" y="34" fill="#145756" font-family="Georgia,serif" font-size="20">Visualizing Lot Capacity &amp; Event Overflow Rules (Rule EV-01)</text>
+      <rect x="24" y="54" width="380" height="142" rx="8" fill="#fffdf6" stroke="#145756" stroke-width="2"/>
+      <text x="40" y="78" fill="#182c2d" font-family="system-ui,sans-serif" font-size="12" font-weight="700">Garage 1 (446/450 · 99% FULL — HOLD)</text>
+      <rect x="40" y="84" width="340" height="14" rx="3" fill="#e5e2d5"/><rect x="40" y="84" width="336" height="14" rx="3" fill="#8b571b"/>
+      <text x="40" y="118" fill="#182c2d" font-family="system-ui,sans-serif" font-size="12" font-weight="700">Lot B (295/320 · 92% — WATCH)</text>
+      <rect x="40" y="124" width="340" height="14" rx="3" fill="#e5e2d5"/><rect x="40" y="124" width="312" height="14" rx="3" fill="#b37821"/>
+      <text x="40" y="158" fill="#182c2d" font-family="system-ui,sans-serif" font-size="12" font-weight="700">Lot D Overflow (105/500 · 21% — OPEN)</text>
+      <rect x="40" y="164" width="340" height="14" rx="3" fill="#e5e2d5"/><rect x="40" y="164" width="72" height="14" rx="3" fill="#145756"/>
+
+      <rect x="424" y="54" width="312" height="142" rx="8" fill="#edf1e7" stroke="#8b571b" stroke-width="2"/>
+      <text x="442" y="82" fill="#8b571b" font-family="system-ui,sans-serif" font-size="12" font-weight="700">AGENT ROUTING THRESHOLDS</text>
+      <text x="442" y="108" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">• &gt; 40 Guest Vehicles → Lot D Overflow</text>
+      <text x="442" y="132" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">• Charter Buses → North Bus Apron (Max 4)</text>
+      <text x="442" y="156" fill="#182c2d" font-family="system-ui,sans-serif" font-size="13">• &gt;= 95% Garage Fill → Divert Visitors</text>
+      <text x="442" y="180" fill="#145756" font-family="system-ui,sans-serif" font-size="12" font-weight="700">Cites Rules VP-01, EV-01 &amp; EV-02</text>
+    </svg>
