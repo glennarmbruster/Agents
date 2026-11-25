@@ -1,6 +1,0 @@
-RequestID,Department,EventDate,Guests,LotRequested,Status
-REQ-101,Biology,2026-12-03,12,Garage 2,Approved
-REQ-102,History,2026-12-04,45,Lot B,Pending
-REQ-103,Athletics,2026-12-05,8,Garage 1,Denied - Lot Full
-REQ-104,Chemistry,2026-12-06,20,Lot B,Approved
-REQ-105,Music,2026-12-07,60,Garage 2,Pending
